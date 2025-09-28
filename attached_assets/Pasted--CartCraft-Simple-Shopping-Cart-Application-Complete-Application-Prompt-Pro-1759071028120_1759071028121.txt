@@ -1,0 +1,160 @@
+# 🛒 **CartCraft** - Simple Shopping Cart Application
+
+## Complete Application Prompt
+
+### **Project Overview**
+Build a minimal but polished e-commerce application called **CartCraft** using Python FastAPI for backend and Vanilla HTML/CSS/JavaScript for frontend. This application demonstrates full-stack development skills with clean architecture and professional code quality.
+
+### **Application Name: CartCraft**
+*"Crafting seamless shopping experiences with simplicity"*
+
+---
+
+## **Backend Requirements (FastAPI)**
+
+### **Core API Endpoints**
+
+1. **GET /api/products**
+   - Return hardcoded JSON list of 8-10 products
+   - Each product must include: `id`, `name`, `price`, `imageUrl`, `description`
+   - Use high-quality placeholder images (Unsplash recommended)
+   - Price range: ₹500 - ₹15,000 for Indian market relevance
+   - Categories: Electronics, Accessories, Home & Living
+
+2. **POST /api/checkout**
+   - Accept JSON payload with cart items (product IDs and quantities)
+   - Log complete order details to console with timestamp
+   - Calculate and log total amount
+   - Return success message with order confirmation number
+   - Include error handling for invalid data
+
+### **Technical Requirements**
+- Use Pydantic models for request/response validation
+- Enable CORS for frontend communication
+- Add automatic API documentation (FastAPI's built-in Swagger UI)
+- Include proper HTTP status codes and error messages
+- Structure code with clear separation of concerns
+
+---
+
+## **Frontend Requirements (HTML/CSS/JS)**
+
+### **Core Pages & Components**
+
+1. **Main Product Grid Page**
+   - Responsive grid layout (3-4 columns on desktop, 1-2 on mobile)
+   - Each product card displays: image, name, price, description snippet
+   - "Add to Cart" button with hover effects
+   - Professional, modern design with clean typography
+
+2. **Shopping Cart Modal/Sidebar**
+   - Toggle visibility with cart icon in header
+   - Display all cart items with: image thumbnail, name, price, quantity controls
+   - Show subtotal, tax (if applicable), and total price
+   - "Continue Shopping" and "Checkout" buttons
+   - Empty cart state with encouraging message
+
+3. **Header Navigation**
+   - Application logo/name (CartCraft)
+   - Cart icon with item count badge
+   - Clean, minimal design
+
+### **State Management Requirements**
+- Implement cart state using JavaScript classes or modules
+- Real-time cart updates (add/remove/quantity changes)
+- Cart count badge updates automatically
+- Smooth UI transitions and loading states
+
+### **User Experience Flow**
+1. User lands on product grid
+2. User can browse products in responsive layout
+3. User clicks "Add to Cart" → Item added with visual feedback
+4. User can open cart modal to review items
+5. User can adjust quantities or remove items
+6. User clicks "Checkout" → Data sent to backend
+7. User sees success confirmation
+
+---
+
+## **Bonus Features Implementation**
+
+### **Enhanced Cart Management**
+- **Quantity Controls**: +/- buttons in cart with real-time total updates
+- **Remove Items**: Individual item removal with confirmation
+- **Cart Persistence**: localStorage integration to maintain cart across sessions
+- **Visual Feedback**: Loading spinners, success animations, error states
+
+### **Professional Polish**
+- **Responsive Design**: Mobile-first approach with breakpoints
+- **Loading States**: Show loading indicators during API calls
+- **Error Handling**: User-friendly error messages for network issues
+- **Accessibility**: Proper ARIA labels, keyboard navigation support
+- **Performance**: Optimized images, efficient DOM updates
+
+### **Testing Requirements**
+- **Backend Test**: Write test for `/api/products` endpoint using pytest
+- **Frontend Test**: Basic cart functionality test (optional but impressive)
+
+---
+
+## **Technical Architecture**
+
+### **Project Structure**
+```
+cartcraft/
+├── backend/
+│   ├── main.py (FastAPI application)
+│   ├── models.py (Pydantic models)
+│   ├── data.py (Product data)
+│   ├── requirements.txt
+│   └── tests/
+│       └── test_main.py
+├── frontend/
+│   ├── index.html
+│   ├── styles.css
+│   ├── script.js
+│   └── assets/
+└── README.md (Comprehensive setup guide)
+```
+
+### **Technology Stack**
+- **Backend**: Python 3.8+, FastAPI, Uvicorn
+- **Frontend**: HTML5, CSS3, Vanilla JavaScript (ES6+)
+- **Styling**: Modern CSS (Flexbox/Grid, CSS Variables)
+- **Testing**: pytest for backend
+- **Development**: Live reload for both frontend and backend
+
+---
+
+## **Evaluation Success Criteria**
+
+### **Code Quality (40%)**
+- Clean, readable code with consistent formatting
+- Proper error handling and validation
+- Clear separation between frontend and backend logic
+- Professional project structure and documentation
+
+### **Functionality (40%)**
+- All core features working seamlessly
+- Smooth user experience with no broken flows
+- Proper API integration and state management
+- Responsive design across devices
+
+### **Professional Polish (20%)**
+- Modern, attractive UI design
+- Bonus features implemented thoughtfully
+- Comprehensive README with setup instructions
+- Optional: Video demonstration of the application
+
+---
+
+## **Unique Selling Points for Your Submission**
+
+1. **Indian Market Focus**: Products and pricing relevant to Indian consumers
+2. **Professional Design**: Modern, clean interface that looks production-ready
+3. **Complete Documentation**: Thorough README with setup, API docs, and design decisions
+4. **Performance Optimized**: Fast loading, efficient state management
+5. **Accessibility Considered**: Keyboard navigation, screen reader friendly
+6. **Test Coverage**: Professional testing approach
+
+This prompt ensures you build a complete, impressive application that stands out while being achievable in the 4-6 hour timeframe. The focus on Polish and user experience will differentiate your submission from basic implementations.
