@@ -252,3 +252,5 @@ class ShoppingCart {
 
 // Initialize the shopping cart when the page loads
 const cart = new ShoppingCart();
+// Make cart available globally for inline event handlers
+window.cart = cart;
