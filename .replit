@@ -16,15 +16,15 @@ author = "agent"
 
 [[workflows.workflow.tasks]]
 task = "workflow.run"
-args = "FastAPI Server"
+args = "Flask Server"
 
 [[workflows.workflow]]
-name = "FastAPI Server"
+name = "Flask Server"
 author = "agent"
 
 [[workflows.workflow.tasks]]
 task = "shell.exec"
-args = "uvicorn main:app --host 0.0.0.0 --port 5000 --reload"
+args = "python flask_app.py"
 waitForPort = 5000
 
 [workflows.workflow.metadata]
@@ -33,3 +33,7 @@ outputType = "webview"
 [[ports]]
 localPort = 5000
 externalPort = 80
+
+[[ports]]
+localPort = 40249
+externalPort = 3000
