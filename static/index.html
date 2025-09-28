@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple Shopping Cart</title>
+    <link rel="stylesheet" href="static/styles.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <h1 class="logo">Simple Cart</h1>
+            <button class="cart-btn" id="cartBtn">
+                🛒 Cart (<span id="cartCount">0</span>)
+            </button>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="main">
+        <div class="container">
+            <h2>Products</h2>
+            <div class="loading" id="loading">Loading products...</div>
+            <div class="products-grid" id="productsGrid"></div>
+        </div>
+    </main>
+
+    <!-- Cart Modal -->
+    <div class="modal" id="cartModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Shopping Cart</h3>
+                <button class="close-btn" id="closeCartBtn">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div class="cart-items" id="cartItems"></div>
+                <div class="cart-total">
+                    <strong>Total: ₹<span id="cartTotal">0.00</span></strong>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-secondary" id="continueShopping">Continue Shopping</button>
+                <button class="btn btn-primary" id="checkoutBtn">Checkout</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Success Modal -->
+    <div class="modal" id="successModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Order Confirmed!</h3>
+                <button class="close-btn" id="closeSuccessBtn">&times;</button>
+            </div>
+            <div class="modal-body">
+                <p id="successMessage"></p>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-primary" id="closeSuccessOk">OK</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="static/script.js"></script>
+</body>
+</html>
