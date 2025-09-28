@@ -73,15 +73,15 @@ def get_products():
 @app.route('/checkout', methods=['POST'])
 def checkout():
     """Process checkout with cart items"""
-    data = request.get_json()
+    data = request.get_json(silent=True)
     
     if not data or 'items' not in data:
-        return jsonify({"error": "Invalid request data"}), 400
+        return jsonify({"detail": "Invalid request data"}), 400
     
     items = data['items']
     
     if not items:
-        return jsonify({"error": "Cart is empty"}), 400
+        return jsonify({"detail": "Cart is empty"}), 400
     
     # Calculate total and log order details
     total = 0.0
@@ -90,7 +90,7 @@ def checkout():
     for item in items:
         # Validate item structure
         if 'productId' not in item or 'quantity' not in item:
-            return jsonify({"error": "Invalid item format"}), 400
+            return jsonify({"detail": "Invalid item format"}), 400
         
         product_id = item['productId']
         quantity = item['quantity']
@@ -98,10 +98,10 @@ def checkout():
         # Find product
         product = next((p for p in PRODUCTS if p['id'] == product_id), None)
         if not product:
-            return jsonify({"error": f"Product with ID {product_id} not found"}), 400
+            return jsonify({"detail": f"Product with ID {product_id} not found"}), 400
         
         if quantity <= 0:
-            return jsonify({"error": "Quantity must be greater than 0"}), 400
+            return jsonify({"detail": "Quantity must be greater than 0"}), 400
         
         item_total = product['price'] * quantity
         total += item_total
@@ -137,13 +137,21 @@ def checkout():
         "orderId": order_id
     })
 
+@app.errorhandler(400)
+def bad_request(error):
+    return jsonify({"detail": getattr(error, "description", "Bad Request")}), 400
+
 @app.errorhandler(404)
 def not_found(error):
-    return jsonify({"error": "Not found"}), 404
+    return jsonify({"detail": "Not found"}), 404
+
+@app.errorhandler(405)
+def method_not_allowed(error):
+    return jsonify({"detail": "Method Not Allowed"}), 405
 
 @app.errorhandler(500)
 def internal_error(error):
-    return jsonify({"error": "Internal server error"}), 500
+    return jsonify({"detail": "Internal server error"}), 500
 
 if __name__ == "__main__":
     app.run(host="0.0.0.0", port=5000, debug=True)

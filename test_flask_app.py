@@ -151,6 +151,48 @@ def test_checkout_invalid_item_structure(client):
     # Should return 400 Bad Request
     assert response.status_code == 400
 
+def test_error_schema_consistency(client):
+    """Test that all error responses use consistent {"detail": "..."} schema"""
+    # Test 400 with empty cart
+    response = client.post('/checkout',
+                          data=json.dumps({"items": []}),
+                          content_type='application/json')
+    assert response.status_code == 400
+    error_data = response.get_json()
+    assert "detail" in error_data
+    assert isinstance(error_data["detail"], str)
+    
+    # Test 400 with invalid product
+    response = client.post('/checkout',
+                          data=json.dumps({"items": [{"productId": 999, "quantity": 1}]}),
+                          content_type='application/json')
+    assert response.status_code == 400
+    error_data = response.get_json()
+    assert "detail" in error_data
+    
+    # Test 404
+    response = client.get('/nonexistent-endpoint')
+    assert response.status_code == 404
+    error_data = response.get_json()
+    assert "detail" in error_data
+    
+    # Test 405 (Method Not Allowed)
+    response = client.post('/products')  # GET endpoint called with POST
+    assert response.status_code == 405
+    error_data = response.get_json()
+    assert "detail" in error_data
+
+def test_malformed_json_handling(client):
+    """Test that malformed JSON is handled gracefully"""
+    response = client.post('/checkout',
+                          data='{"invalid": json}',  # Malformed JSON
+                          content_type='application/json')
+    
+    # Should return 400 Bad Request with detail
+    assert response.status_code == 400
+    error_data = response.get_json()
+    assert "detail" in error_data
+
 if __name__ == "__main__":
     # Run tests
     pytest.main([__file__, "-v"])
