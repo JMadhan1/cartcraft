@@ -120,28 +120,56 @@ class CartCraft {
 
     async loadProducts() {
         try {
+            console.log('Starting to load products...');
             this.elements.loading.style.display = 'flex';
             this.elements.productsGrid.style.display = 'none';
+            this.elements.noResults.style.display = 'none';
             
             const response = await fetch('/products');
-            if (!response.ok) throw new Error('Failed to load products');
+            console.log('Response status:', response.status);
             
-            this.products = await response.json();
+            if (!response.ok) {
+                throw new Error(`HTTP error! status: ${response.status}`);
+            }
+            
+            const products = await response.json();
+            console.log('Products received:', products.length, 'products');
+            
+            if (!Array.isArray(products)) {
+                throw new Error('Invalid response format - expected array');
+            }
+            
+            this.products = products;
             this.filteredProducts = [...this.products];
             this.renderProducts();
             this.updateResultsInfo();
+            
+            console.log('Products loaded and rendered successfully');
         } catch (error) {
             console.error('Error loading products:', error);
+            this.elements.noResults.style.display = 'block';
+            this.elements.noResults.innerHTML = `
+                <div class="empty-cart">
+                    <i class="fas fa-exclamation-triangle"></i>
+                    <h3>Failed to load products</h3>
+                    <p>Error: ${error.message}</p>
+                    <button onclick="cart.loadProducts()" class="btn btn-primary">Retry</button>
+                </div>
+            `;
             this.showToast('Error loading products. Please try again.', 'error');
         } finally {
             this.elements.loading.style.display = 'none';
+            this.elements.productsGrid.style.display = 'grid';
         }
     }
 
     renderProducts() {
         const container = this.elements.productsGrid;
         
-        if (this.filteredProducts.length === 0) {
+        console.log('Rendering products:', this.filteredProducts.length, 'products');
+        
+        if (!this.filteredProducts || this.filteredProducts.length === 0) {
+            console.log('No products to display');
             this.elements.noResults.style.display = 'block';
             container.style.display = 'none';
             return;
