@@ -6,7 +6,7 @@ class CartCraft {
         this.wishlist = this.loadWishlistFromStorage();
         this.darkMode = this.loadThemeFromStorage();
         this.currentView = 'grid';
-        
+
         this.initializeElements();
         this.bindEvents();
         this.loadProducts();
@@ -26,14 +26,14 @@ class CartCraft {
             wishlistCount: document.getElementById('wishlistCount'),
             cartBtn: document.getElementById('cartBtn'),
             cartCount: document.getElementById('cartCount'),
-            
+
             // Main content
             loading: document.getElementById('loading'),
             resultsInfo: document.getElementById('resultsInfo'),
             resultsCount: document.getElementById('resultsCount'),
             productsGrid: document.getElementById('productsGrid'),
             noResults: document.getElementById('noResults'),
-            
+
             // Cart modal
             cartModal: document.getElementById('cartModal'),
             cartItems: document.getElementById('cartItems'),
@@ -44,26 +44,26 @@ class CartCraft {
             closeCartBtn: document.getElementById('closeCartBtn'),
             continueShopping: document.getElementById('continueShopping'),
             checkoutBtn: document.getElementById('checkoutBtn'),
-            
+
             // Wishlist modal
             wishlistModal: document.getElementById('wishlistModal'),
             wishlistItems: document.getElementById('wishlistItems'),
             closeWishlistBtn: document.getElementById('closeWishlistBtn'),
             closeWishlist: document.getElementById('closeWishlist'),
             addAllToCart: document.getElementById('addAllToCart'),
-            
+
             // Quick view modal
             quickViewModal: document.getElementById('quickViewModal'),
             quickViewContent: document.getElementById('quickViewContent'),
             closeQuickViewBtn: document.getElementById('closeQuickViewBtn'),
-            
+
             // Success modal
             successModal: document.getElementById('successModal'),
             successMessage: document.getElementById('successMessage'),
             closeSuccessBtn: document.getElementById('closeSuccessBtn'),
             trackOrder: document.getElementById('trackOrder'),
             continueBrowsing: document.getElementById('continueBrowsing'),
-            
+
             // Toast container
             toastContainer: document.getElementById('toastContainer')
         };
@@ -74,37 +74,37 @@ class CartCraft {
         this.elements.searchInput.addEventListener('input', (e) => this.handleSearch(e.target.value));
         this.elements.searchClear.addEventListener('click', () => this.clearSearch());
         this.elements.categoryFilter.addEventListener('change', (e) => this.handleCategoryFilter(e.target.value));
-        
+
         // Theme toggle
         this.elements.themeToggle.addEventListener('click', () => this.toggleTheme());
-        
+
         // Header buttons
         this.elements.wishlistBtn.addEventListener('click', () => this.showWishlist());
         this.elements.cartBtn.addEventListener('click', () => this.showCart());
-        
+
         // View options
         document.querySelectorAll('.view-btn').forEach(btn => {
             btn.addEventListener('click', (e) => this.changeView(e.target.closest('.view-btn').dataset.view));
         });
-        
+
         // Modal close events
         this.elements.closeCartBtn.addEventListener('click', () => this.hideCart());
         this.elements.continueShopping.addEventListener('click', () => this.hideCart());
         this.elements.checkoutBtn.addEventListener('click', () => this.checkout());
-        
+
         this.elements.closeWishlistBtn.addEventListener('click', () => this.hideWishlist());
         this.elements.closeWishlist.addEventListener('click', () => this.hideWishlist());
         this.elements.addAllToCart.addEventListener('click', () => this.addAllWishlistToCart());
-        
+
         this.elements.closeQuickViewBtn.addEventListener('click', () => this.hideQuickView());
-        
+
         this.elements.closeSuccessBtn.addEventListener('click', () => this.hideSuccess());
         this.elements.trackOrder.addEventListener('click', () => this.trackOrder());
         this.elements.continueBrowsing.addEventListener('click', () => this.hideSuccess());
-        
+
         // Promo code
         document.querySelector('.apply-promo').addEventListener('click', () => this.applyPromoCode());
-        
+
         // Modal overlay clicks
         [this.elements.cartModal, this.elements.wishlistModal, this.elements.quickViewModal, this.elements.successModal].forEach(modal => {
             modal.addEventListener('click', (e) => {
@@ -113,7 +113,7 @@ class CartCraft {
                 }
             });
         });
-        
+
         // Keyboard shortcuts
         document.addEventListener('keydown', (e) => this.handleKeyboard(e));
     }
@@ -124,26 +124,26 @@ class CartCraft {
             this.elements.loading.style.display = 'flex';
             this.elements.productsGrid.style.display = 'none';
             this.elements.noResults.style.display = 'none';
-            
+
             const response = await fetch('/products');
             console.log('Response status:', response.status);
-            
+
             if (!response.ok) {
                 throw new Error(`HTTP error! status: ${response.status}`);
             }
-            
+
             const products = await response.json();
             console.log('Products received:', products.length, 'products');
-            
+
             if (!Array.isArray(products)) {
                 throw new Error('Invalid response format - expected array');
             }
-            
+
             this.products = products;
             this.filteredProducts = [...this.products];
             this.renderProducts();
             this.updateResultsInfo();
-            
+
             console.log('Products loaded and rendered successfully');
         } catch (error) {
             console.error('Error loading products:', error);
@@ -165,19 +165,19 @@ class CartCraft {
 
     renderProducts() {
         const container = this.elements.productsGrid;
-        
+
         console.log('Rendering products:', this.filteredProducts.length, 'products');
-        
+
         if (!this.filteredProducts || this.filteredProducts.length === 0) {
             console.log('No products to display');
             this.elements.noResults.style.display = 'block';
             container.style.display = 'none';
             return;
         }
-        
+
         this.elements.noResults.style.display = 'none';
         container.style.display = 'grid';
-        
+
         container.innerHTML = this.filteredProducts.map(product => `
             <div class="product-card animate-fade-in" data-product-id="${product.id}">
                 <div class="product-image-container">
@@ -220,7 +220,7 @@ class CartCraft {
         const fullStars = Math.floor(rating);
         const hasHalfStar = rating % 1 !== 0;
         const emptyStars = 5 - fullStars - (hasHalfStar ? 1 : 0);
-        
+
         return [
             ...Array(fullStars).fill('<i class="fas fa-star star"></i>'),
             ...(hasHalfStar ? ['<i class="fas fa-star-half-alt star"></i>'] : []),
@@ -230,13 +230,13 @@ class CartCraft {
 
     handleSearch(query) {
         const searchTerm = query.toLowerCase().trim();
-        
+
         if (searchTerm) {
             this.elements.searchClear.style.display = 'block';
         } else {
             this.elements.searchClear.style.display = 'none';
         }
-        
+
         this.filterProducts();
     }
 
@@ -253,18 +253,18 @@ class CartCraft {
     filterProducts() {
         const searchTerm = this.elements.searchInput.value.toLowerCase().trim();
         const selectedCategory = this.elements.categoryFilter.value;
-        
+
         this.filteredProducts = this.products.filter(product => {
             const matchesSearch = !searchTerm || 
                 product.name.toLowerCase().includes(searchTerm) ||
                 product.brand.toLowerCase().includes(searchTerm) ||
                 product.description.toLowerCase().includes(searchTerm);
-            
+
             const matchesCategory = !selectedCategory || product.category === selectedCategory;
-            
+
             return matchesSearch && matchesCategory;
         });
-        
+
         this.renderProducts();
         this.updateResultsInfo();
     }
@@ -278,7 +278,7 @@ class CartCraft {
         this.currentView = view;
         document.querySelectorAll('.view-btn').forEach(btn => btn.classList.remove('active'));
         document.querySelector(`[data-view="${view}"]`).classList.add('active');
-        
+
         if (view === 'list') {
             this.elements.productsGrid.classList.add('list-view');
         } else {
@@ -290,9 +290,9 @@ class CartCraft {
     toggleWishlist(productId) {
         const product = this.products.find(p => p.id === productId);
         if (!product) return;
-        
+
         const isInWishlist = this.isInWishlist(productId);
-        
+
         if (isInWishlist) {
             this.wishlist = this.wishlist.filter(id => id !== productId);
             this.showToast(`${product.name} removed from wishlist`, 'info');
@@ -300,7 +300,7 @@ class CartCraft {
             this.wishlist.push(productId);
             this.showToast(`${product.name} added to wishlist`, 'success');
         }
-        
+
         this.saveWishlistToStorage();
         this.updateWishlistDisplay();
         this.renderProducts(); // Re-render to update heart icons
@@ -325,7 +325,7 @@ class CartCraft {
 
     renderWishlistItems() {
         const wishlistProducts = this.products.filter(p => this.wishlist.includes(p.id));
-        
+
         if (wishlistProducts.length === 0) {
             this.elements.wishlistItems.innerHTML = `
                 <div class="empty-cart">
@@ -336,7 +336,7 @@ class CartCraft {
             `;
             return;
         }
-        
+
         this.elements.wishlistItems.innerHTML = wishlistProducts.map(product => `
             <div class="cart-item">
                 <img src="${product.imageUrl}" alt="${product.name}" class="cart-item-image">
@@ -363,7 +363,7 @@ class CartCraft {
                 addedCount++;
             }
         });
-        
+
         if (addedCount > 0) {
             this.saveCartToStorage();
             this.updateCartDisplay();
@@ -378,7 +378,7 @@ class CartCraft {
     showQuickView(productId) {
         const product = this.products.find(p => p.id === productId);
         if (!product) return;
-        
+
         this.elements.quickViewContent.innerHTML = `
             <div class="quick-view-product">
                 <div class="quick-view-image">
@@ -410,7 +410,7 @@ class CartCraft {
                 </div>
             </div>
         `;
-        
+
         this.elements.quickViewModal.classList.add('show');
     }
 
@@ -428,7 +428,7 @@ class CartCraft {
     applyTheme() {
         const body = document.body;
         const icon = this.elements.themeToggle.querySelector('i');
-        
+
         if (this.darkMode) {
             body.classList.add('dark-theme');
             icon.className = 'fas fa-sun';
@@ -506,14 +506,14 @@ class CartCraft {
         const tax = Math.round(subtotal * 0.18); // 18% GST
         const total = subtotal + tax;
         const itemCount = this.getCartItemCount();
-        
+
         console.log('Updating cart display - Items:', itemCount, 'Subtotal:', subtotal);
-        
+
         this.elements.cartCount.textContent = itemCount;
         this.elements.subtotal.textContent = `₹${subtotal.toLocaleString('en-IN')}`;
         this.elements.tax.textContent = `₹${tax.toLocaleString('en-IN')}`;
         this.elements.cartTotal.textContent = `₹${total.toLocaleString('en-IN')}`;
-        
+
         this.elements.checkoutBtn.disabled = this.cart.length === 0;
     }
 
@@ -569,10 +569,10 @@ class CartCraft {
     showCartAddedFeedback() {
         const cartBtn = this.elements.cartBtn;
         const originalContent = cartBtn.innerHTML;
-        
+
         cartBtn.innerHTML = '<i class="fas fa-check"></i> Added!';
         cartBtn.style.background = 'var(--success-gradient)';
-        
+
         setTimeout(() => {
             cartBtn.innerHTML = originalContent;
             cartBtn.style.background = 'var(--primary-gradient)';
@@ -585,7 +585,7 @@ class CartCraft {
             this.showToast('Please enter a promo code', 'warning');
             return;
         }
-        
+
         // Simulate promo code validation
         const validCodes = ['SAVE10', 'WELCOME20', 'FIRST50'];
         if (validCodes.includes(code.toUpperCase())) {
@@ -622,16 +622,16 @@ class CartCraft {
             }
 
             const result = await response.json();
-            
+
             // Clear cart and update display
             this.cart = [];
             this.saveCartToStorage();
             this.updateCartDisplay();
             this.hideCart();
-            
+
             // Show success with animation
             this.showSuccess(result.message);
-            
+
             // Trigger confetti animation
             this.triggerConfetti();
 
@@ -673,14 +673,14 @@ class CartCraft {
     showToast(message, type = 'info', duration = 4000) {
         const toast = document.createElement('div');
         toast.className = `toast ${type}`;
-        
+
         const icons = {
             success: 'fas fa-check-circle',
             error: 'fas fa-exclamation-circle',
             warning: 'fas fa-exclamation-triangle',
             info: 'fas fa-info-circle'
         };
-        
+
         toast.innerHTML = `
             <i class="toast-icon ${icons[type]}"></i>
             <div class="toast-content">
@@ -690,18 +690,18 @@ class CartCraft {
                 <i class="fas fa-times"></i>
             </button>
         `;
-        
+
         // Close button functionality
         toast.querySelector('.toast-close').addEventListener('click', () => {
             this.removeToast(toast);
         });
-        
+
         // Add to container
         this.elements.toastContainer.appendChild(toast);
-        
+
         // Trigger show animation
         setTimeout(() => toast.classList.add('show'), 100);
-        
+
         // Auto-remove after duration
         setTimeout(() => this.removeToast(toast), duration);
     }
@@ -718,7 +718,7 @@ class CartCraft {
     // Keyboard shortcuts
     handleKeyboard(e) {
         if (e.target.tagName === 'INPUT' || e.target.tagName === 'TEXTAREA') return;
-        
+
         switch (e.key) {
             case 'Escape':
                 // Close any open modals
