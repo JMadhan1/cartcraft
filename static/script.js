@@ -441,14 +441,22 @@ class CartCraft {
     // Cart functionality (enhanced)
     addToCart(productId) {
         const product = this.products.find(p => p.id === productId);
-        if (!product) return;
+        if (!product) {
+            console.error('Product not found:', productId);
+            return;
+        }
 
         const existingItem = this.cart.find(item => item.productId === productId);
         if (existingItem) {
             existingItem.quantity += 1;
+            console.log(`Updated quantity for ${product.name}: ${existingItem.quantity}`);
         } else {
             this.cart.push({ productId, quantity: 1 });
+            console.log(`Added new item to cart: ${product.name}`);
         }
+
+        console.log('Current cart:', this.cart);
+        console.log('Total items in cart:', this.getCartItemCount());
 
         this.saveCartToStorage();
         this.updateCartDisplay();
@@ -488,15 +496,20 @@ class CartCraft {
     }
 
     getCartItemCount() {
-        return this.cart.reduce((count, item) => count + item.quantity, 0);
+        const totalCount = this.cart.reduce((count, item) => count + item.quantity, 0);
+        console.log('Calculating cart count:', this.cart, 'Total:', totalCount);
+        return totalCount;
     }
 
     updateCartDisplay() {
         const subtotal = this.getCartTotal();
         const tax = Math.round(subtotal * 0.18); // 18% GST
         const total = subtotal + tax;
+        const itemCount = this.getCartItemCount();
         
-        this.elements.cartCount.textContent = this.getCartItemCount();
+        console.log('Updating cart display - Items:', itemCount, 'Subtotal:', subtotal);
+        
+        this.elements.cartCount.textContent = itemCount;
         this.elements.subtotal.textContent = `₹${subtotal.toLocaleString('en-IN')}`;
         this.elements.tax.textContent = `₹${tax.toLocaleString('en-IN')}`;
         this.elements.cartTotal.textContent = `₹${total.toLocaleString('en-IN')}`;
