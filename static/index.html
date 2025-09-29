@@ -3,64 +3,200 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Simple Shopping Cart</title>
+    <title>CartCraft - Premium Shopping Experience</title>
     <link rel="stylesheet" href="static/styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
-<body>
+<body class="light-theme">
     <!-- Header -->
     <header class="header">
         <div class="container">
-            <h1 class="logo">Simple Cart</h1>
-            <button class="cart-btn" id="cartBtn">
-                🛒 Cart (<span id="cartCount">0</span>)
-            </button>
+            <div class="logo-section">
+                <h1 class="logo">
+                    <i class="fas fa-shopping-bag logo-icon"></i>
+                    CartCraft
+                </h1>
+                <span class="tagline">Premium Shopping Experience</span>
+            </div>
+            
+            <div class="search-section">
+                <div class="search-container">
+                    <i class="fas fa-search search-icon"></i>
+                    <input type="text" class="search-input" id="searchInput" placeholder="Search products...">
+                    <button class="search-clear" id="searchClear" style="display: none;">
+                        <i class="fas fa-times"></i>
+                    </button>
+                </div>
+                <div class="filter-container">
+                    <select class="category-filter" id="categoryFilter">
+                        <option value="">All Categories</option>
+                        <option value="Electronics">Electronics</option>
+                        <option value="Fashion">Fashion</option>
+                        <option value="Home & Kitchen">Home & Kitchen</option>
+                        <option value="Books">Books</option>
+                    </select>
+                </div>
+            </div>
+            
+            <div class="header-actions">
+                <button class="theme-toggle" id="themeToggle" title="Toggle dark mode">
+                    <i class="fas fa-moon"></i>
+                </button>
+                <button class="wishlist-btn" id="wishlistBtn" title="Wishlist">
+                    <i class="fas fa-heart"></i>
+                    <span class="wishlist-count" id="wishlistCount">0</span>
+                </button>
+                <button class="cart-btn" id="cartBtn">
+                    <i class="fas fa-shopping-cart cart-icon"></i>
+                    <span class="cart-text">Cart</span>
+                    <span class="cart-count" id="cartCount">0</span>
+                </button>
+            </div>
         </div>
     </header>
 
     <!-- Main Content -->
     <main class="main">
         <div class="container">
-            <h2>Products</h2>
-            <div class="loading" id="loading">Loading products...</div>
-            <div class="products-grid" id="productsGrid"></div>
+            <!-- Results Info -->
+            <div class="results-info" id="resultsInfo">
+                <span id="resultsCount">10 products found</span>
+                <div class="view-options">
+                    <button class="view-btn active" data-view="grid" title="Grid view">
+                        <i class="fas fa-th-large"></i>
+                    </button>
+                    <button class="view-btn" data-view="list" title="List view">
+                        <i class="fas fa-list"></i>
+                    </button>
+                </div>
+            </div>
+            
+            <!-- Loading State -->
+            <div class="loading-container" id="loading">
+                <div class="loading-spinner"></div>
+                <p>Loading amazing products...</p>
+            </div>
+            
+            <!-- Products Grid -->
+            <div class="products-container">
+                <div class="products-grid" id="productsGrid"></div>
+                <div class="no-results" id="noResults" style="display: none;">
+                    <i class="fas fa-search"></i>
+                    <h3>No products found</h3>
+                    <p>Try adjusting your search or filters</p>
+                </div>
+            </div>
         </div>
     </main>
 
     <!-- Cart Modal -->
-    <div class="modal" id="cartModal">
-        <div class="modal-content">
+    <div class="modal-overlay" id="cartModal">
+        <div class="modal cart-modal">
             <div class="modal-header">
-                <h3>Shopping Cart</h3>
-                <button class="close-btn" id="closeCartBtn">&times;</button>
+                <h3><i class="fas fa-shopping-cart"></i> Shopping Cart</h3>
+                <button class="close-btn" id="closeCartBtn">
+                    <i class="fas fa-times"></i>
+                </button>
             </div>
             <div class="modal-body">
                 <div class="cart-items" id="cartItems"></div>
-                <div class="cart-total">
-                    <strong>Total: ₹<span id="cartTotal">0.00</span></strong>
+                <div class="order-summary" id="orderSummary">
+                    <div class="summary-row">
+                        <span>Subtotal:</span>
+                        <span id="subtotal">₹0.00</span>
+                    </div>
+                    <div class="summary-row">
+                        <span>Shipping:</span>
+                        <span class="free-shipping">FREE</span>
+                    </div>
+                    <div class="summary-row">
+                        <span>Tax (GST 18%):</span>
+                        <span id="tax">₹0.00</span>
+                    </div>
+                    <div class="promo-code">
+                        <input type="text" placeholder="Enter promo code" id="promoInput">
+                        <button class="apply-promo">Apply</button>
+                    </div>
+                    <div class="summary-total">
+                        <span>Total:</span>
+                        <span id="cartTotal">₹0.00</span>
+                    </div>
                 </div>
             </div>
             <div class="modal-footer">
-                <button class="btn btn-secondary" id="continueShopping">Continue Shopping</button>
-                <button class="btn btn-primary" id="checkoutBtn">Checkout</button>
+                <button class="btn btn-secondary" id="continueShopping">
+                    <i class="fas fa-arrow-left"></i> Continue Shopping
+                </button>
+                <button class="btn btn-primary checkout-btn" id="checkoutBtn">
+                    <i class="fas fa-credit-card"></i> Secure Checkout
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Wishlist Modal -->
+    <div class="modal-overlay" id="wishlistModal">
+        <div class="modal wishlist-modal">
+            <div class="modal-header">
+                <h3><i class="fas fa-heart"></i> My Wishlist</h3>
+                <button class="close-btn" id="closeWishlistBtn">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="wishlist-items" id="wishlistItems"></div>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-secondary" id="closeWishlist">Close</button>
+                <button class="btn btn-primary" id="addAllToCart">Add All to Cart</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Product Quick View Modal -->
+    <div class="modal-overlay" id="quickViewModal">
+        <div class="modal quick-view-modal">
+            <div class="modal-header">
+                <h3>Product Details</h3>
+                <button class="close-btn" id="closeQuickViewBtn">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="modal-body" id="quickViewContent">
+                <!-- Content populated by JavaScript -->
             </div>
         </div>
     </div>
 
     <!-- Success Modal -->
-    <div class="modal" id="successModal">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h3>Order Confirmed!</h3>
-                <button class="close-btn" id="closeSuccessBtn">&times;</button>
+    <div class="modal-overlay" id="successModal">
+        <div class="modal success-modal">
+            <div class="modal-header success-header">
+                <h3><i class="fas fa-check-circle"></i> Order Confirmed!</h3>
+                <button class="close-btn" id="closeSuccessBtn">
+                    <i class="fas fa-times"></i>
+                </button>
             </div>
             <div class="modal-body">
+                <div class="success-animation">
+                    <div class="confetti"></div>
+                </div>
                 <p id="successMessage"></p>
-            </div>
-            <div class="modal-footer">
-                <button class="btn btn-primary" id="closeSuccessOk">OK</button>
+                <div class="success-actions">
+                    <button class="btn btn-outline" id="trackOrder">
+                        <i class="fas fa-truck"></i> Track Order
+                    </button>
+                    <button class="btn btn-primary" id="continueBrowsing">
+                        <i class="fas fa-shopping-bag"></i> Continue Shopping
+                    </button>
+                </div>
             </div>
         </div>
     </div>
+
+    <!-- Toast Notifications -->
+    <div class="toast-container" id="toastContainer"></div>
 
     <script src="static/script.js"></script>
 </body>

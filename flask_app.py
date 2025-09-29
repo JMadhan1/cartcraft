@@ -8,55 +8,147 @@ app = Flask(__name__, static_folder='static')
 # Enable CORS for frontend communication
 CORS(app)
 
-# Product data structure (same as FastAPI version)
+# Realistic Indian e-commerce product data with authentic pricing and categories
 PRODUCTS = [
     {
         "id": 1,
-        "name": "Wireless Bluetooth Headphones",
-        "price": 2499.99,
-        "imageUrl": "https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=400&h=400&fit=crop"
+        "name": "boAt Rockerz 550 Wireless Bluetooth Headphones",
+        "price": 2499,
+        "originalPrice": 4990,
+        "discount": "50% off",
+        "category": "Electronics",
+        "brand": "boAt",
+        "rating": 4.2,
+        "reviews": 47892,
+        "badge": "Bestseller",
+        "description": "Premium wireless headphones with 50mm drivers, 20 hours playback, and fast charging",
+        "imageUrl": "https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=400&h=400&fit=crop&auto=format"
     },
     {
         "id": 2,
-        "name": "Smartphone",
-        "price": 15999.99,
-        "imageUrl": "https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?w=400&h=400&fit=crop"
+        "name": "Redmi Note 12 Pro 5G (Glacier Blue, 128GB)",
+        "price": 23999,
+        "originalPrice": 27999,
+        "discount": "14% off",
+        "category": "Electronics",
+        "brand": "Xiaomi",
+        "rating": 4.4,
+        "reviews": 28340,
+        "badge": "Top Rated",
+        "description": "50MP triple camera, MediaTek Dimensity 1080 processor, 67W turbo charging",
+        "imageUrl": "https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?w=400&h=400&fit=crop&auto=format"
     },
     {
         "id": 3,
-        "name": "Laptop Computer",
-        "price": 45999.99,
-        "imageUrl": "https://images.unsplash.com/photo-1496181133206-80ce9b88a853?w=400&h=400&fit=crop"
+        "name": "HP Pavilion 15 Gaming Laptop (Intel i5, 16GB RAM, 512GB SSD)",
+        "price": 65999,
+        "originalPrice": 79999,
+        "discount": "17% off",
+        "category": "Electronics",
+        "brand": "HP",
+        "rating": 4.3,
+        "reviews": 12750,
+        "badge": "Gaming",
+        "description": "Intel Core i5-12450H, NVIDIA GTX 1650, 15.6\" FHD display, Windows 11",
+        "imageUrl": "https://images.unsplash.com/photo-1496181133206-80ce9b88a853?w=400&h=400&fit=crop&auto=format"
     },
     {
         "id": 4,
-        "name": "Coffee Mug",
-        "price": 299.99,
-        "imageUrl": "https://images.unsplash.com/photo-1514228742587-6b1558fcf93a?w=400&h=400&fit=crop"
+        "name": "Nestlé Everyday Premium Ceramic Coffee Mug Set (Set of 2)",
+        "price": 399,
+        "originalPrice": 799,
+        "discount": "50% off",
+        "category": "Home & Kitchen",
+        "brand": "Nestlé",
+        "rating": 4.1,
+        "reviews": 8650,
+        "badge": "Choice",
+        "description": "Premium ceramic mugs with ergonomic handle, microwave & dishwasher safe",
+        "imageUrl": "https://images.unsplash.com/photo-1514228742587-6b1558fcf93a?w=400&h=400&fit=crop&auto=format"
     },
     {
         "id": 5,
-        "name": "Book - Python Programming",
-        "price": 599.99,
-        "imageUrl": "https://images.unsplash.com/photo-1544947950-fa07a98d237f?w=400&h=400&fit=crop"
+        "name": "Automate the Boring Stuff with Python - 2nd Edition",
+        "price": 699,
+        "originalPrice": 999,
+        "discount": "30% off",
+        "category": "Books",
+        "brand": "No Starch Press",
+        "rating": 4.6,
+        "reviews": 15630,
+        "badge": "Educational",
+        "description": "Learn Python programming with practical projects and automation tasks",
+        "imageUrl": "https://images.unsplash.com/photo-1544947950-fa07a98d237f?w=400&h=400&fit=crop&auto=format"
     },
     {
         "id": 6,
-        "name": "Desk Lamp",
-        "price": 1299.99,
-        "imageUrl": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=400&fit=crop"
+        "name": "Philips Smart LED Desk Lamp with Wireless Charging",
+        "price": 3499,
+        "originalPrice": 4999,
+        "discount": "30% off",
+        "category": "Home & Kitchen",
+        "brand": "Philips",
+        "rating": 4.5,
+        "reviews": 6840,
+        "badge": "Smart",
+        "description": "Touch control, wireless phone charging base, adjustable brightness & color temperature",
+        "imageUrl": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=400&fit=crop&auto=format"
     },
     {
         "id": 7,
-        "name": "Wireless Mouse",
-        "price": 899.99,
-        "imageUrl": "https://images.unsplash.com/photo-1527864550417-7fd91fc51a46?w=400&h=400&fit=crop"
+        "name": "Logitech MX Master 3S Wireless Mouse",
+        "price": 6999,
+        "originalPrice": 8995,
+        "discount": "22% off",
+        "category": "Electronics",
+        "brand": "Logitech",
+        "rating": 4.7,
+        "reviews": 21450,
+        "badge": "Pro",
+        "description": "Ultra-precise scrolling, customizable buttons, works on any surface including glass",
+        "imageUrl": "https://images.unsplash.com/photo-1527864550417-7fd91fc51a46?w=400&h=400&fit=crop&auto=format"
     },
     {
         "id": 8,
-        "name": "Water Bottle",
-        "price": 199.99,
-        "imageUrl": "https://images.unsplash.com/photo-1602143407151-7111542de6e8?w=400&h=400&fit=crop"
+        "name": "Milton Thermosteel Water Bottle 750ml (Blue)",
+        "price": 449,
+        "originalPrice": 699,
+        "discount": "36% off",
+        "category": "Home & Kitchen",
+        "brand": "Milton",
+        "rating": 4.3,
+        "reviews": 34560,
+        "badge": "Trending",
+        "description": "Double wall vacuum insulation, keeps drinks hot/cold for 24 hours, BPA free",
+        "imageUrl": "https://images.unsplash.com/photo-1602143407151-7111542de6e8?w=400&h=400&fit=crop&auto=format"
+    },
+    {
+        "id": 9,
+        "name": "Titan Raga Viva Women's Analog Watch (Rose Gold)",
+        "price": 8995,
+        "originalPrice": 12500,
+        "discount": "28% off",
+        "category": "Fashion",
+        "brand": "Titan",
+        "rating": 4.4,
+        "reviews": 9870,
+        "badge": "Luxury",
+        "description": "Elegant rose gold finish, mother of pearl dial, water resistant up to 30m",
+        "imageUrl": "https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=400&h=400&fit=crop&auto=format"
+    },
+    {
+        "id": 10,
+        "name": "Levi's Men's 511 Slim Jeans (Dark Blue)",
+        "price": 2299,
+        "originalPrice": 3999,
+        "discount": "42% off",
+        "category": "Fashion",
+        "brand": "Levi's",
+        "rating": 4.2,
+        "reviews": 18920,
+        "badge": "Classic",
+        "description": "Classic slim fit jeans, premium denim fabric, comfortable stretch, multiple sizes",
+        "imageUrl": "https://images.unsplash.com/photo-1542272604-787c3835535d?w=400&h=400&fit=crop&auto=format"
     }
 ]
 
