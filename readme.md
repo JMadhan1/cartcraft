@@ -1,4 +1,4 @@
-# 🛒 ShopEase - Simple Shopping Cart Application
+# 🛒 CartCraft - Simple Shopping Cart Application
 
 ![Project Status](https://img.shields.io/badge/status-active-success.svg)
 ![Python](https://img.shields.io/badge/python-3.8+-blue.svg)
@@ -7,13 +7,16 @@
 
 > A minimal yet feature-rich e-commerce shopping cart application built for the Verto ASE Challenge 2025
 
-**Live Demo:** [https://8796583d-e9fa-4a81-974b-9527b9c02eab-00-3fk8lwrutjsmf.riker.repl.co/](https://8796583d-e9fa-4a81-974b-9527b9c02eab-00-3fk8lwrutjsmf.riker.repl.co/)
+**🎥 Video Demonstration:** [Watch on Google Drive](https://drive.google.com/file/d/15KO2hlPmsXrTp2jSQ8rDBTbe_kse7FNQ/view?usp=sharing)
+
+**🚀 Live Demo:** [https://cartcraft-3.onrender.com/](https://cartcraft-3.onrender.com/)
 
 ---
 
 ## 📋 Table of Contents
 
 - [About The Project](#about-the-project)
+- [Video Walkthrough](#video-walkthrough)
 - [Features](#features)
 - [Tech Stack](#tech-stack)
 - [Project Structure](#project-structure)
@@ -32,15 +35,31 @@
 
 ## 🎯 About The Project
 
-**ShopEase** is a full-stack shopping cart application that demonstrates modern web development practices. Built as part of the Verto Associate Software Engineer Challenge, this project showcases clean architecture, RESTful API design, and an intuitive user interface.
+**CartCraft** is a full-stack shopping cart application that demonstrates modern web development practices. Built as part of the Verto Associate Software Engineer Challenge, this project showcases clean architecture, RESTful API design, and an intuitive user interface.
 
-### Why ShopEase?
+### Why CartCraft?
 
 - ✅ **Simple & Intuitive**: Easy-to-use interface for seamless shopping experience
 - ✅ **Modern Tech Stack**: Built with FastAPI and vanilla JavaScript
 - ✅ **Responsive Design**: Works flawlessly on desktop, tablet, and mobile
 - ✅ **Production-Ready**: Clean code, proper error handling, and comprehensive testing
 - ✅ **Performance Optimized**: Fast load times and smooth interactions
+
+---
+
+## 🎥 Video Walkthrough
+
+**Watch the complete demonstration:** [Video Link](https://drive.google.com/file/d/15KO2hlPmsXrTp2jSQ8rDBTbe_kse7FNQ/view?usp=sharing)
+
+In this 5-minute video, I cover:
+- ✅ Live application demonstration
+- ✅ All core features in action (products, cart, checkout)
+- ✅ Backend API documentation walkthrough
+- ✅ Code architecture explanation
+- ✅ Testing demonstration
+- ✅ Technical challenges and solutions
+
+*If the Google Drive link requires access, please request permission or contact me directly.*
 
 ---
 
@@ -95,7 +114,7 @@
 
 ### Development Tools
 - **Git**: Version control
-- **Replit**: Deployment platform
+- **Render**: Deployment platform
 - **VS Code**: Code editor (recommended)
 
 ---
@@ -103,7 +122,7 @@
 ## 📁 Project Structure
 
 ```
-shopease/
+cartcraft/
 ├── backend/
 │   ├── main.py                 # FastAPI application entry point
 │   ├── models.py               # Pydantic data models
@@ -192,8 +211,8 @@ shopease/
 #### 1. Clone the Repository
 
 ```bash
-git clone https://github.com/yourusername/shopease.git
-cd shopease
+git clone https://github.com/JMadhan1/cartcraft.git
+cd cartcraft
 ```
 
 #### 2. Set Up Backend
@@ -240,7 +259,8 @@ http://localhost:8000
 
 ### Base URL
 ```
-http://localhost:8000/api
+Production: https://cartcraft-3.onrender.com/api
+Local: http://localhost:8000/api
 ```
 
 ### Endpoints
@@ -334,12 +354,12 @@ Total Amount: ₹14999.97
 
 FastAPI provides automatic interactive documentation:
 
-**Swagger UI**: http://localhost:8000/docs
+**Swagger UI**: https://cartcraft-3.onrender.com/docs
 - Try out endpoints directly
 - See request/response schemas
 - Test authentication (if added)
 
-**ReDoc**: http://localhost:8000/redoc
+**ReDoc**: https://cartcraft-3.onrender.com/redoc
 - Clean, readable documentation
 - Search functionality
 - Code samples
@@ -558,45 +578,52 @@ Current test coverage: **90%+**
 ### Manual Testing Checklist
 
 #### Frontend Testing
-- [ ] Products load correctly
-- [ ] Add to cart works
-- [ ] Cart count updates
-- [ ] Cart modal opens/closes
-- [ ] Quantity increase/decrease
-- [ ] Remove item works
-- [ ] Total price calculates correctly
-- [ ] Checkout succeeds
-- [ ] Cart persists after refresh
-- [ ] Responsive on mobile
-- [ ] All images load
-- [ ] Error messages display
+- [x] Products load correctly
+- [x] Add to cart works
+- [x] Cart count updates
+- [x] Cart modal opens/closes
+- [x] Quantity increase/decrease
+- [x] Remove item works
+- [x] Total price calculates correctly
+- [x] Checkout succeeds
+- [x] Cart persists after refresh
+- [x] Responsive on mobile
+- [x] All images load
+- [x] Error messages display
 
 #### Backend Testing
-- [ ] API docs accessible
-- [ ] Products endpoint returns data
-- [ ] Checkout logs to console
-- [ ] CORS headers present
-- [ ] Static files served
-- [ ] Error responses formatted correctly
+- [x] API docs accessible
+- [x] Products endpoint returns data
+- [x] Checkout logs to console
+- [x] CORS headers present
+- [x] Static files served
+- [x] Error responses formatted correctly
 
 ---
 
 ## 🚀 Deployment
 
-### Deployed on Replit
+### Deployed on Render
 
-**Live URL**: [https://8796583d-e9fa-4a81-974b-9527b9c02eab-00-3fk8lwrutjsmf.riker.repl.co/](https://8796583d-e9fa-4a81-974b-9527b9c02eab-00-3fk8lwrutjsmf.riker.repl.co/)
+**Live URL**: [https://cartcraft-3.onrender.com/](https://cartcraft-3.onrender.com/)
+
+### Deployment Details
+
+- **Platform**: Render (Free Tier)
+- **Region**: Oregon (US West)
+- **Auto-Deploy**: Enabled from GitHub
+- **Environment**: Production
+- **SSL/HTTPS**: Automatically provisioned
 
 ### Deployment Steps
 
-1. **Create Replit Account**: Sign up at replit.com
-2. **Import Repository**: Connect GitHub repo
-3. **Configure Run Command**: 
-   ```bash
-   uvicorn backend.main:app --host 0.0.0.0 --port 8000
-   ```
+1. **Create Render Account**: Sign up at render.com
+2. **Connect Repository**: Link GitHub repo
+3. **Configure Build Settings**: 
+   - Build Command: `pip install -r requirements.txt`
+   - Start Command: `uvicorn main:app --host 0.0.0.0 --port $PORT`
 4. **Set Environment Variables**: (if any)
-5. **Deploy**: Click "Run"
+5. **Deploy**: Click "Create Web Service"
 
 ### Alternative Deployment Options
 
@@ -606,7 +633,7 @@ Current test coverage: **90%+**
 web: uvicorn backend.main:app --host 0.0.0.0 --port $PORT
 
 # Deploy
-heroku create shopease-app
+heroku create cartcraft-app
 git push heroku main
 ```
 
@@ -683,12 +710,16 @@ Distributed under the MIT License. See `LICENSE` file for more information.
 
 ## 👤 Contact
 
-**Your Name**
-- LinkedIn: [Your LinkedIn Profile](https://www.linkedin.com/in/j-madhan-6b90a32b1)
-- Email: your.email@example.com
-- GitHub: [@yourusername](https://github.com/JMadhan1)
+**J Madhan**
+- LinkedIn: [linkedin.com/in/j-madhan-6b90a32b1](https://www.linkedin.com/in/j-madhan-6b90a32b1)
+- Email: jmadhanplacement@gmail.com
+- GitHub: [@JMadhan1](https://github.com/JMadhan1)
 
-**Project Link**: 
+**Project Links**:
+- **Live Application**: [https://cartcraft-3.onrender.com/](https://cartcraft-3.onrender.com/)
+- **Video Demo**: [Watch on Google Drive](https://drive.google.com/file/d/15KO2hlPmsXrTp2jSQ8rDBTbe_kse7FNQ/view?usp=sharing)
+- **GitHub Repository**: [https://github.com/JMadhan1/cartcraft](https://github.com/JMadhan1/cartcraft)
+
 ---
 
 ## 🙏 Acknowledgments
@@ -696,6 +727,7 @@ Distributed under the MIT License. See `LICENSE` file for more information.
 - **Verto**: For the ASE Challenge opportunity
 - **FastAPI Documentation**: Excellent learning resource
 - **Unsplash**: Free high-quality product images
+- **Render**: Free hosting platform
 - **Community**: Stack Overflow, GitHub discussions
 
 ---
@@ -733,7 +765,8 @@ Distributed under the MIT License. See `LICENSE` file for more information.
 - [x] Loading states
 - [x] Professional documentation
 - [x] Clean code architecture
-- [x] Live deployment
+- [x] Live deployment on Render
+- [x] Video walkthrough
 
 ---
 
@@ -741,6 +774,8 @@ Distributed under the MIT License. See `LICENSE` file for more information.
 
 **Built with ❤️ for the Verto ASE Challenge 2025**
 
-[⬆ Back to Top](#-shopease---simple-shopping-cart-application)
+🎥 [Watch Demo](https://drive.google.com/file/d/15KO2hlPmsXrTp2jSQ8rDBTbe_kse7FNQ/view?usp=sharing) | 🚀 [Live Site](https://cartcraft-3.onrender.com/) | 📧 [Contact Me](mailto:jmadhanplacement@gmail.com)
+
+[⬆ Back to Top](#-cartcraft---simple-shopping-cart-application)
 
 </div>
