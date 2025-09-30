@@ -57,6 +57,10 @@
 </div>
 
 ---
+<img width="1890" height="1010" alt="craft" src="https://github.com/user-attachments/assets/c52831cd-4524-4dd2-8e50-9b959e4a52f6" />
+<img width="1906" height="1012" alt="carft1" src="https://github.com/user-attachments/assets/80ad15b0-0558-48a6-9338-32fc75a816f8" />
+<img width="1847" height="1001" alt="craft2" src="https://github.com/user-attachments/assets/ad9a2271-7e14-4447-8d54-8f8f9279fefe" />
+
 
 ## 📖 Table of Contents
 
