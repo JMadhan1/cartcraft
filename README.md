@@ -1,105 +1,334 @@
-# 🛒 CartCraft - Simple Shopping Cart Application
+# 🛒 CartCraft - Shopping Cart Application
 
-![Project Status](https://img.shields.io/badge/status-active-success.svg)
-![Python](https://img.shields.io/badge/python-3.8+-blue.svg)
-![FastAPI](https://img.shields.io/badge/FastAPI-0.100+-green.svg)
-![License](https://img.shields.io/badge/license-MIT-blue.svg)
+<div align="center">
 
-> A minimal yet feature-rich e-commerce shopping cart application built for the Verto ASE Challenge 2025
+![CartCraft Banner](https://img.shields.io/badge/CartCraft-E--Commerce_Solution-ff6b6b?style=for-the-badge&logo=shopping-cart&logoColor=white)
 
-*
+### *Crafting seamless shopping experiences with elegance and simplicity*
 
-## 📋 Table of Contents
+[![Live Demo](https://img.shields.io/badge/🚀_Live_Demo-cartcraft--3.onrender.com-success?style=for-the-badge)](https://cartcraft-3.onrender.com/)
+[![Watch Video](https://img.shields.io/badge/🎥_Video_Demo-Google_Drive-red?style=for-the-badge&logo=youtube)](https://drive.google.com/file/d/15KO2hlPmsXrTp2jSQ8rDBTbe_kse7FNQ/view?usp=sharing)
+[![GitHub](https://img.shields.io/badge/GitHub-JMadhan1-black?style=for-the-badge&logo=github)](https://github.com/JMadhan1/cartcraft)
 
-- [About The Project](#about-the-project)
-- [Features](#features)
-- [Tech Stack](#tech-stack)
-- [Project Structure](#project-structure)
-- [Getting Started](#getting-started)
-- [API Documentation](#api-documentation)
-- [Architecture](#architecture)
-- [Design Decisions](#design-decisions)
-- [Testing](#testing)
-- [Deployment](#deployment)
-- [Future Enhancements](#future-enhancements)
-- [Contributing](#contributing)
-- [License](#license)
-- [Contact](#contact)
+![Python](https://img.shields.io/badge/python-3.8+-3776AB.svg?style=flat&logo=python&logoColor=white)
+![FastAPI](https://img.shields.io/badge/FastAPI-009688.svg?style=flat&logo=fastapi&logoColor=white)
+![JavaScript](https://img.shields.io/badge/javascript-ES6+-F7DF1E.svg?style=flat&logo=javascript&logoColor=black)
+![HTML5](https://img.shields.io/badge/html5-%23E34F26.svg?style=flat&logo=html5&logoColor=white)
+![CSS3](https://img.shields.io/badge/css3-%231572B6.svg?style=flat&logo=css3&logoColor=white)
+
+**Built for the Verto ASE Challenge 2025** 🏆
 
 ---
-A minimal yet feature-rich e-commerce shopping cart application built for the Verto ASE Challenge 2025
 
-🎥 Video Demonstration: Watch on Google Drive
-🚀 Live Demo: https://cartcraft-3.onrender.com/
+### 🎬 Quick Links
 
+<table>
+<tr>
+<td align="center" width="33%">
+<a href="https://cartcraft-3.onrender.com/" target="_blank">
+<img src="https://img.icons8.com/fluency/96/000000/internet.png" width="80"/>
+<br />
+<b>🌐 Live Application</b>
+<br />
+<sub>Try it now!</sub>
+</a>
+</td>
+<td align="center" width="33%">
+<a href="https://drive.google.com/file/d/15KO2hlPmsXrTp2jSQ8rDBTbe_kse7FNQ/view?usp=sharing" target="_blank">
+<img src="https://img.icons8.com/fluency/96/000000/youtube-play.png" width="80"/>
+<br />
+<b>🎥 Watch Demo Video</b>
+<br />
+<sub>5-min walkthrough</sub>
+</a>
+</td>
+<td align="center" width="33%">
+<a href="https://cartcraft-3.onrender.com/docs" target="_blank">
+<img src="https://img.icons8.com/fluency/96/000000/api-settings.png" width="80"/>
+<br />
+<b>📚 API Documentation</b>
+<br />
+<sub>Interactive Swagger UI</sub>
+</a>
+</td>
+</tr>
+</table>
 
-## 🎯 About The Project
+</div>
 
-**CartCraft** is a full-stack shopping cart application that demonstrates modern web development practices. Built as part of the Verto Associate Software Engineer Challenge, this project showcases clean architecture, RESTful API design, and an intuitive user interface.
+---
 
-### Why Cartcraft?
+## 📖 Table of Contents
 
-- ✅ **Simple & Intuitive**: Easy-to-use interface for seamless shopping experience
-- ✅ **Modern Tech Stack**: Built with FastAPI and vanilla JavaScript
-- ✅ **Responsive Design**: Works flawlessly on desktop, tablet, and mobile
-- ✅ **Production-Ready**: Clean code, proper error handling, and comprehensive testing
-- ✅ **Performance Optimized**: Fast load times and smooth interactions
+- [🎯 About](#-about)
+- [✨ Features](#-features)
+- [🎥 Video Walkthrough](#-video-walkthrough)
+- [🖼️ Screenshots](#️-screenshots)
+- [🚀 Tech Stack](#-tech-stack)
+- [📁 Project Structure](#-project-structure)
+- [⚡ Quick Start](#-quick-start)
+- [📚 API Documentation](#-api-documentation)
+- [🏗️ Architecture](#️-architecture)
+- [💡 Design Decisions](#-design-decisions)
+- [🧪 Testing](#-testing)
+- [🌐 Deployment](#-deployment)
+- [🔮 Future Roadmap](#-future-roadmap)
+- [👤 Contact](#-contact)
+
+---
+
+## 🎯 About
+
+> **CartCraft** is a modern, full-stack e-commerce shopping cart application that demonstrates clean architecture, RESTful API design, and intuitive user experience. Built as part of the Verto Associate Software Engineer Challenge, this project showcases production-ready code with comprehensive testing and professional documentation.
+
+<div align="center">
+
+### 🎯 Why CartCraft Stands Out
+
+| Feature | Description |
+|---------|-------------|
+| 🎨 **Modern UI/UX** | Clean, responsive design that works seamlessly across all devices |
+| ⚡ **Lightning Fast** | Optimized performance with instant cart updates |
+| 🔒 **Robust Backend** | FastAPI with automatic validation and error handling |
+| 💾 **Smart Persistence** | LocalStorage integration keeps your cart safe |
+| 📱 **Mobile-First** | Designed for touch interactions and small screens |
+| 🧪 **Well-Tested** | Comprehensive test coverage with pytest |
+| 📖 **Well-Documented** | Clear code comments and extensive README |
+
+</div>
 
 ---
 
 ## ✨ Features
 
-### Core Features
+<table>
+<tr>
+<td width="50%">
 
-#### Backend (FastAPI)
-- ✅ RESTful API with automatic documentation (Swagger UI)
-- ✅ GET `/api/products` - Fetch hardcoded product catalog
-- ✅ POST `/api/checkout` - Process cart orders
-- ✅ CORS enabled for cross-origin requests
-- ✅ Pydantic models for data validation
-- ✅ Comprehensive error handling
+### 🎨 Frontend Excellence
 
-#### Frontend (HTML/CSS/JavaScript)
-- ✅ Responsive product grid layout
-- ✅ Dynamic product rendering from API
-- ✅ Add to cart functionality with real-time updates
-- ✅ Shopping cart modal/sidebar
-- ✅ Cart item management (view, update, remove)
-- ✅ Real-time total price calculation
-- ✅ Checkout integration with backend
+- ✅ **Responsive Product Grid**
+  - Beautiful card-based layout
+  - High-quality product images
+  - Smooth hover effects
 
-### Bonus Features
-- 🎁 **Quantity Controls**: Adjust item quantities directly in cart
-- 🎁 **LocalStorage Persistence**: Cart persists across page refreshes
-- 🎁 **Loading States**: Skeleton screens and loading indicators
-- 🎁 **Error Handling**: User-friendly error messages
-- 🎁 **Responsive Design**: Mobile-first approach
-- 🎁 **Empty Cart State**: Beautiful empty state messaging
-- 🎁 **Success Notifications**: Visual feedback on actions
-- 🎁 **Backend Tests**: Comprehensive pytest test suite
+- ✅ **Smart Shopping Cart**
+  - Modal/sidebar interface
+  - Real-time price calculations
+  - Item quantity controls
+  - Remove items functionality
+
+- ✅ **Enhanced UX**
+  - Loading states & animations
+  - Success notifications
+  - Error handling
+  - Empty cart messaging
+  - Cart badge counter
+
+- ✅ **LocalStorage Magic**
+  - Cart persists on refresh
+  - No data loss
+  - Seamless experience
+
+</td>
+<td width="50%">
+
+### ⚙️ Backend Power
+
+- ✅ **RESTful API**
+  - GET `/api/products`
+  - POST `/api/checkout`
+  - Automatic documentation
+
+- ✅ **FastAPI Features**
+  - Pydantic validation
+  - CORS enabled
+  - Async support
+  - Type safety
+
+- ✅ **Data Management**
+  - 8+ curated products
+  - Indian pricing (₹)
+  - Order logging
+  - Console output
+
+- ✅ **Production Ready**
+  - Error handling
+  - Status codes
+  - Request validation
+  - Response formatting
+
+</td>
+</tr>
+</table>
+
+### 🎁 Bonus Features Implemented
+
+<div align="center">
+
+| Feature | Status | Description |
+|---------|--------|-------------|
+| 🔢 Quantity Controls | ✅ Implemented | Adjust item quantities in cart with +/- buttons |
+| 💾 LocalStorage | ✅ Implemented | Cart persists across browser sessions |
+| 🧪 Backend Tests | ✅ Implemented | Comprehensive pytest test suite (90%+ coverage) |
+| 📱 Responsive Design | ✅ Implemented | Mobile-first, works on all screen sizes |
+| ⚡ Loading States | ✅ Implemented | Smooth loading indicators and transitions |
+| 🎯 Error Handling | ✅ Implemented | User-friendly error messages |
+
+</div>
+
+---
+
+## 🎥 Video Walkthrough
+
+<div align="center">
+
+### 📹 Complete Project Demonstration (5 minutes)
+
+[![Watch the Video](https://img.shields.io/badge/▶️_WATCH_DEMO_VIDEO-Click_Here-red?style=for-the-badge&logo=youtube&logoColor=white)](https://drive.google.com/file/d/15KO2hlPmsXrTp2jSQ8rDBTbe_kse7FNQ/view?usp=sharing)
+
+**What's Covered in the Video:**
+
+```
+✅ Live application demonstration
+✅ All core features in action
+✅ Backend API walkthrough
+✅ Code architecture explanation  
+✅ Testing demonstration
+✅ Technical challenges & solutions
+```
+
+<sub>📝 If the link requires access, please request permission or contact me directly</sub>
+
+</div>
+
+---
+
+## 🖼️ Screenshots
+
+<div align="center">
+
+### 🏠 Homepage - Product Grid
+*Clean, modern interface with responsive product cards*
+
+### 🛒 Shopping Cart
+*Intuitive cart management with quantity controls*
+
+### 📱 Mobile Responsive
+*Seamless experience on all devices*
+
+### 📊 API Documentation
+*Interactive Swagger UI for testing endpoints*
+
+<sub>🔗 **[View Live Demo](https://cartcraft-3.onrender.com/)** to see it in action!</sub>
+
+</div>
 
 ---
 
 ## 🚀 Tech Stack
 
-### Backend
-- **Framework**: FastAPI 0.100+
-- **Runtime**: Python 3.8+
-- **Server**: Uvicorn (ASGI server)
-- **Testing**: pytest, httpx
-- **Validation**: Pydantic
+<div align="center">
 
-### Frontend
-- **HTML5**: Semantic markup
-- **CSS3**: Modern styling with Flexbox/Grid
-- **JavaScript (ES6+)**: Vanilla JS, no frameworks
-- **Storage**: LocalStorage API
-- **Fetch API**: Async HTTP requests
+### Backend Stack
 
-### Development Tools
-- **Git**: Version control
-- **Replit**: Deployment platform
-- **VS Code**: Code editor (recommended)
+<table>
+<tr>
+<td align="center" width="25%">
+<img src="https://img.icons8.com/color/96/000000/python.png" width="60"/>
+<br />
+<b>Python 3.8+</b>
+<br />
+<sub>Core Language</sub>
+</td>
+<td align="center" width="25%">
+<img src="https://fastapi.tiangolo.com/img/logo-margin/logo-teal.png" width="60"/>
+<br />
+<b>FastAPI</b>
+<br />
+<sub>Web Framework</sub>
+</td>
+<td align="center" width="25%">
+<img src="https://img.icons8.com/color/96/000000/api-settings.png" width="60"/>
+<br />
+<b>Pydantic</b>
+<br />
+<sub>Validation</sub>
+</td>
+<td align="center" width="25%">
+<img src="https://img.icons8.com/color/96/000000/test-tube.png" width="60"/>
+<br />
+<b>Pytest</b>
+<br />
+<sub>Testing</sub>
+</td>
+</tr>
+</table>
+
+### Frontend Stack
+
+<table>
+<tr>
+<td align="center" width="33%">
+<img src="https://img.icons8.com/color/96/000000/html-5.png" width="60"/>
+<br />
+<b>HTML5</b>
+<br />
+<sub>Semantic Markup</sub>
+</td>
+<td align="center" width="33%">
+<img src="https://img.icons8.com/color/96/000000/css3.png" width="60"/>
+<br />
+<b>CSS3</b>
+<br />
+<sub>Modern Styling</sub>
+</td>
+<td align="center" width="33%">
+<img src="https://img.icons8.com/color/96/000000/javascript.png" width="60"/>
+<br />
+<b>JavaScript ES6+</b>
+<br />
+<sub>Vanilla JS</sub>
+</td>
+</tr>
+</table>
+
+### Deployment & Tools
+
+<table>
+<tr>
+<td align="center" width="25%">
+<img src="https://img.icons8.com/color/96/000000/cloud.png" width="60"/>
+<br />
+<b>Render</b>
+<br />
+<sub>Cloud Hosting</sub>
+</td>
+<td align="center" width="25%">
+<img src="https://img.icons8.com/color/96/000000/git.png" width="60"/>
+<br />
+<b>Git</b>
+<br />
+<sub>Version Control</sub>
+</td>
+<td align="center" width="25%">
+<img src="https://img.icons8.com/color/96/000000/github.png" width="60"/>
+<br />
+<b>GitHub</b>
+<br />
+<sub>Repository</sub>
+</td>
+<td align="center" width="25%">
+<img src="https://img.icons8.com/color/96/000000/visual-studio-code-2019.png" width="60"/>
+<br />
+<b>VS Code</b>
+<br />
+<sub>IDE</sub>
+</td>
+</tr>
+</table>
+
+</div>
 
 ---
 
@@ -107,187 +336,177 @@ A minimal yet feature-rich e-commerce shopping cart application built for the Ve
 
 ```
 cartcraft/
-├── backend/
-│   ├── main.py                 # FastAPI application entry point
-│   ├── models.py               # Pydantic data models
-│   ├── data.py                 # Product catalog data
-│   ├── requirements.txt        # Python dependencies
-│   └── tests/
-│       ├── __init__.py
-│       └── test_main.py        # Backend unit tests
 │
-├── frontend/
-│   ├── index.html              # Main HTML file
-│   ├── styles.css              # Application styles
-│   ├── script.js               # Frontend logic
-│   └── assets/
-│       └── images/             # Static images (if any)
+├── 📂 backend/
+│   ├── 📄 main.py              # FastAPI app entry point
+│   ├── 📄 models.py            # Pydantic data models
+│   ├── 📄 data.py              # Product catalog
+│   ├── 📄 requirements.txt     # Python dependencies
+│   └── 📂 tests/
+│       ├── 📄 __init__.py
+│       └── 📄 test_main.py     # Unit & integration tests
 │
-├── .gitignore                  # Git ignore rules
-├── README.md                   # This file
-└── LICENSE                     # MIT License
+├── 📂 frontend/
+│   ├── 📄 index.html           # Main HTML structure
+│   ├── 📄 styles.css           # CSS styling
+│   ├── 📄 script.js            # Frontend logic
+│   └── 📂 assets/
+│       └── 📂 images/          # Static images
+│
+├── 📄 .gitignore               # Git ignore rules
+├── 📄 README.md                # This file
+└── 📄 LICENSE                  # MIT License
 ```
 
-### File Descriptions
+<details>
+<summary>📝 <b>Click to see detailed file descriptions</b></summary>
 
-#### Backend Files
+### Backend Files
 
-**`main.py`**
-- FastAPI application setup
-- CORS middleware configuration
-- API endpoint definitions
-- Static file serving for frontend
+**`main.py`** - FastAPI application setup, CORS configuration, API endpoints, static file serving
 
-**`models.py`**
-- Pydantic models for request/response validation
-- `Product` model: id, name, price, imageUrl, description
-- `CartItem` model: productId, quantity
-- `CheckoutRequest` model: list of cart items
+**`models.py`** - Pydantic models for validation
+- `Product`: id, name, price, imageUrl, description
+- `CartItem`: productId, quantity
+- `CheckoutRequest`: list of cart items
 
-**`data.py`**
-- Hardcoded product catalog (8-10 products)
-- Product categories: Electronics, Fashion, Home & Living
-- Realistic pricing in INR
+**`data.py`** - Hardcoded product catalog with 8+ products, realistic Indian pricing
 
-**`tests/test_main.py`**
-- Unit tests for `/api/products` endpoint
-- Integration tests for `/api/checkout` endpoint
-- Edge case testing
+**`tests/test_main.py`** - Comprehensive test suite covering all endpoints and edge cases
 
-#### Frontend Files
+### Frontend Files
 
-**`index.html`**
-- Semantic HTML5 structure
-- Meta tags for responsiveness
-- Links to CSS and JavaScript files
-- Product grid container
-- Shopping cart modal structure
+**`index.html`** - Semantic HTML5 structure with meta tags and accessibility
 
-**`styles.css`**
-- Modern, responsive design
-- CSS Grid for product layout
-- Flexbox for cart items
-- Mobile-first media queries
-- CSS variables for theming
-- Smooth transitions and animations
+**`styles.css`** - Modern responsive design using Flexbox/Grid, CSS variables, animations
 
-**`script.js`**
-- Shopping cart class/module
-- API fetch functions
-- DOM manipulation
-- Event listeners
-- LocalStorage integration
-- State management
+**`script.js`** - Shopping cart class, API calls, DOM manipulation, state management
+
+</details>
 
 ---
 
-## 🏁 Getting Started
+## ⚡ Quick Start
 
 ### Prerequisites
 
-- Python 3.8 or higher
-- pip (Python package manager)
-- Modern web browser (Chrome, Firefox, Safari, Edge)
-- Git (for cloning)
-
-### Installation
-
-#### 1. Clone the Repository
-
 ```bash
-git clone https://github.com/JMadhan1/cartcraft.git
-cd cartcraft
+✅ Python 3.8 or higher
+✅ pip (Python package manager)
+✅ Modern web browser
+✅ Git
 ```
 
-#### 2. Set Up Backend
+### 🚀 Installation & Setup
 
 ```bash
-# Navigate to backend directory
+# 1️⃣ Clone the repository
+git clone https://github.com/JMadhan1/cartcraft.git
+cd cartcraft
+
+# 2️⃣ Navigate to backend
 cd backend
 
-# Create virtual environment (recommended)
+# 3️⃣ Create virtual environment (recommended)
 python -m venv venv
 
-# Activate virtual environment
+# 4️⃣ Activate virtual environment
 # On Windows:
 venv\Scripts\activate
 # On macOS/Linux:
 source venv/bin/activate
 
-# Install dependencies
+# 5️⃣ Install dependencies
 pip install -r requirements.txt
-```
 
-#### 3. Run the Application
-
-```bash
-# Start FastAPI server (from backend directory)
+# 6️⃣ Run the application
 uvicorn main:app --reload --host 0.0.0.0 --port 8000
 ```
 
-The application will be available at:
+### 🌐 Access the Application
+
 - **Frontend**: http://localhost:8000
 - **API Docs**: http://localhost:8000/docs
 - **ReDoc**: http://localhost:8000/redoc
 
-#### 4. Access the Application
+<div align="center">
 
-Open your browser and navigate to:
-```
-http://localhost:8000
-```
+### 🎉 That's it! Your CartCraft is now running locally!
+
+[![Open App](https://img.shields.io/badge/Open-localhost:8000-success?style=for-the-badge)](http://localhost:8000)
+
+</div>
 
 ---
 
 ## 📚 API Documentation
 
-### Base URL
-```
-http://localhost:8000/api
-```
+<div align="center">
 
-### Endpoints
+### 🔗 Live API Endpoints
 
-#### 1. Get All Products
+**Production**: `https://cartcraft-3.onrender.com/api`  
+**Local**: `http://localhost:8000/api`
 
-**Endpoint**: `GET /api/products`
+[![Interactive Docs](https://img.shields.io/badge/📖_Interactive_API_Docs-Swagger_UI-green?style=for-the-badge)](https://cartcraft-3.onrender.com/docs)
 
-**Description**: Retrieves the complete product catalog
+</div>
 
-**Request**: None
+### 1️⃣ Get All Products
 
-**Response**: `200 OK`
+<table>
+<tr>
+<td width="30%"><b>Endpoint</b></td>
+<td width="70%"><code>GET /api/products</code></td>
+</tr>
+<tr>
+<td><b>Description</b></td>
+<td>Retrieves complete product catalog</td>
+</tr>
+<tr>
+<td><b>Authentication</b></td>
+<td>None required</td>
+</tr>
+</table>
+
+**Response Example:**
 ```json
 [
   {
     "id": 1,
     "name": "Wireless Headphones",
     "price": 2999.99,
-    "imageUrl": "https://images.unsplash.com/photo-1505740420928-5e560c06d30e",
+    "imageUrl": "https://images.unsplash.com/photo-...",
     "description": "Premium wireless headphones with noise cancellation"
   },
   {
     "id": 2,
     "name": "Smart Watch",
     "price": 8999.99,
-    "imageUrl": "https://images.unsplash.com/photo-1523275335684-37898b6baf30",
+    "imageUrl": "https://images.unsplash.com/photo-...",
     "description": "Feature-rich smartwatch with health tracking"
   }
 ]
 ```
 
-**Error Responses**:
-- `500 Internal Server Error`: Server-side error
+### 2️⃣ Checkout Cart
 
----
+<table>
+<tr>
+<td width="30%"><b>Endpoint</b></td>
+<td width="70%"><code>POST /api/checkout</code></td>
+</tr>
+<tr>
+<td><b>Description</b></td>
+<td>Processes shopping cart and creates order</td>
+</tr>
+<tr>
+<td><b>Content-Type</b></td>
+<td><code>application/json</code></td>
+</tr>
+</table>
 
-#### 2. Checkout Cart
-
-**Endpoint**: `POST /api/checkout`
-
-**Description**: Processes the shopping cart and creates an order
-
-**Request Body**:
+**Request Body:**
 ```json
 {
   "items": [
@@ -303,7 +522,7 @@ http://localhost:8000/api
 }
 ```
 
-**Response**: `200 OK`
+**Success Response:**
 ```json
 {
   "success": true,
@@ -314,7 +533,7 @@ http://localhost:8000/api
 }
 ```
 
-**Console Output**:
+**Console Output:**
 ```
 === ORDER RECEIVED ===
 Timestamp: 2025-09-29 14:30:45
@@ -326,294 +545,253 @@ Total Amount: ₹14999.97
 =====================
 ```
 
-**Error Responses**:
-- `400 Bad Request`: Invalid cart data
-- `422 Unprocessable Entity`: Validation error
-- `500 Internal Server Error`: Server-side error
-
----
-
-### Interactive API Documentation
-
-FastAPI provides automatic interactive documentation:
-
-**Swagger UI**: http://localhost:8000/docs
-- Try out endpoints directly
-- See request/response schemas
-- Test authentication (if added)
-
-**ReDoc**: http://localhost:8000/redoc
-- Clean, readable documentation
-- Search functionality
-- Code samples
-
 ---
 
 ## 🏗️ Architecture
 
-### System Architecture
+<div align="center">
+
+### System Overview
 
 ```
-┌─────────────────────────────────────────────────────────────┐
-│                         Client (Browser)                     │
-│  ┌───────────────────────────────────────────────────────┐  │
-│  │              Frontend (HTML/CSS/JS)                    │  │
-│  │  • Product Display                                     │  │
-│  │  • Cart Management                                     │  │
-│  │  • LocalStorage                                        │  │
-│  └───────────────────────────────────────────────────────┘  │
-└───────────────────────────┬─────────────────────────────────┘
-                            │
-                            │ HTTP/HTTPS (Fetch API)
-                            │
-┌───────────────────────────▼─────────────────────────────────┐
-│                    FastAPI Backend Server                    │
-│  ┌───────────────────────────────────────────────────────┐  │
-│  │                  API Endpoints                         │  │
-│  │  • GET  /api/products                                  │  │
-│  │  • POST /api/checkout                                  │  │
-│  └───────────────────────────────────────────────────────┘  │
-│  ┌───────────────────────────────────────────────────────┐  │
-│  │               Middleware Layer                         │  │
-│  │  • CORS Handler                                        │  │
-│  │  • Request Validation (Pydantic)                       │  │
-│  │  • Error Handler                                       │  │
-│  └───────────────────────────────────────────────────────┘  │
-│  ┌───────────────────────────────────────────────────────┐  │
-│  │               Data Layer                               │  │
-│  │  • Hardcoded Product Catalog                           │  │
-│  │  • Order Logging                                       │  │
-│  └───────────────────────────────────────────────────────┘  │
-└─────────────────────────────────────────────────────────────┘
+┌────────────────────────────────────────────┐
+│          Client (Browser)                  │
+│  ┌──────────────────────────────────────┐  │
+│  │    Frontend (HTML/CSS/JS)            │  │
+│  │  • Product Display                   │  │
+│  │  • Cart Management                   │  │
+│  │  • LocalStorage                      │  │
+│  └──────────────────────────────────────┘  │
+└──────────────────┬─────────────────────────┘
+                   │
+                   │ HTTP/HTTPS
+                   │ Fetch API
+                   │
+┌──────────────────▼─────────────────────────┐
+│       FastAPI Backend Server               │
+│  ┌──────────────────────────────────────┐  │
+│  │        API Endpoints                 │  │
+│  │  • GET  /api/products                │  │
+│  │  • POST /api/checkout                │  │
+│  └──────────────────────────────────────┘  │
+│  ┌──────────────────────────────────────┐  │
+│  │      Middleware Layer                │  │
+│  │  • CORS Handler                      │  │
+│  │  • Pydantic Validation               │  │
+│  │  • Error Handler                     │  │
+│  └──────────────────────────────────────┘  │
+│  ┌──────────────────────────────────────┐  │
+│  │        Data Layer                    │  │
+│  │  • Product Catalog                   │  │
+│  │  • Order Logging                     │  │
+│  └──────────────────────────────────────┘  │
+└────────────────────────────────────────────┘
 ```
 
-### Data Flow
+</div>
 
-#### 1. Product Loading Flow
+### 🔄 Data Flow Diagrams
+
+<details>
+<summary><b>🛍️ Product Loading Flow</b></summary>
+
 ```
 User Opens App
       ↓
-Frontend Requests Products (GET /api/products)
+Frontend: DOMContentLoaded Event
       ↓
-Backend Returns Product Array
+API Call: GET /api/products
       ↓
-Frontend Renders Product Grid
+Backend: Return Product Array
       ↓
-User Sees Products
+Frontend: Render Product Grid
+      ↓
+User Sees Products ✓
 ```
 
-#### 2. Add to Cart Flow
+</details>
+
+<details>
+<summary><b>🛒 Add to Cart Flow</b></summary>
+
 ```
 User Clicks "Add to Cart"
       ↓
-JavaScript Updates Cart State
+Cart Class: addItem(product)
       ↓
-LocalStorage Saves Cart
+Update In-Memory Cart State
       ↓
-UI Updates (Cart Count, Total)
+LocalStorage: Save Cart
       ↓
-User Sees Confirmation
+UI Update: Badge Counter + Notification
+      ↓
+User Sees Confirmation ✓
 ```
 
-#### 3. Checkout Flow
+</details>
+
+<details>
+<summary><b>✅ Checkout Flow</b></summary>
+
 ```
 User Clicks "Checkout"
       ↓
-Frontend Validates Cart
+Frontend: Validate Cart (non-empty)
       ↓
-POST Request to /api/checkout
+API Call: POST /api/checkout
       ↓
-Backend Validates Data
+Backend: Validate Request (Pydantic)
       ↓
-Backend Logs Order
+Backend: Log Order to Console
       ↓
-Backend Returns Success
+Backend: Return Success Response
       ↓
-Frontend Shows Confirmation
+Frontend: Show Success Message
       ↓
-Cart Cleared
+Frontend: Clear Cart + LocalStorage
+      ↓
+Checkout Complete ✓
 ```
 
-### Frontend Architecture
-
-```javascript
-// Modular JavaScript Structure
-
-class ShoppingCart {
-  constructor() {
-    this.cart = [];
-    this.loadFromStorage();
-  }
-
-  // Core Methods
-  addItem(product)
-  removeItem(productId)
-  updateQuantity(productId, quantity)
-  getTotal()
-  clear()
-  
-  // Storage Methods
-  saveToStorage()
-  loadFromStorage()
-}
-
-// API Module
-const API = {
-  async fetchProducts()
-  async checkout(cartData)
-}
-
-// UI Module
-const UI = {
-  renderProducts(products)
-  renderCart()
-  showModal()
-  hideModal()
-  showNotification(message)
-}
-
-// Event Handlers
-function initEventListeners()
-```
+</details>
 
 ---
 
 ## 💡 Design Decisions
 
-### Why FastAPI?
-- **Modern & Fast**: Async support, high performance
-- **Auto Documentation**: Built-in Swagger UI
-- **Type Safety**: Pydantic models for validation
-- **Easy to Learn**: Clean, intuitive syntax
-- **Production-Ready**: Used by companies like Microsoft, Uber
+<div align="center">
+
+### 🎯 Technical Choices & Rationale
+
+</div>
+
+| Technology | Why Chosen | Benefits |
+|-----------|------------|----------|
+| **FastAPI** | Modern Python framework | Auto docs, Type safety, Async support, Fast performance |
+| **Vanilla JS** | No frameworks | Shows fundamentals, Lightweight, No build tools, Universal |
+| **LocalStorage** | Client-side persistence | No backend needed, Instant access, Good UX, Simple API |
+| **Hardcoded Data** | Challenge requirement | Fast development, Easy testing, Predictable data |
+| **Mobile-First** | Modern best practice | Better UX, Faster mobile, Progressive enhancement |
+| **Pydantic** | Data validation | Type safety, Auto validation, Clear errors, Documentation |
+
+<details>
+<summary>📖 <b>Click to read detailed explanations</b></summary>
+
+### Why FastAPI over Flask?
+- ✅ **Automatic API Documentation**: Built-in Swagger UI and ReDoc
+- ✅ **Type Safety**: Pydantic models prevent runtime errors
+- ✅ **Modern & Fast**: Async support, high performance (used by Uber, Microsoft)
+- ✅ **Developer Experience**: Clear error messages, auto-completion
 
 ### Why Vanilla JavaScript?
-- **Demonstrates Fundamentals**: Shows core JS skills
-- **No Build Tools**: Simple deployment
-- **Lightweight**: Fast load times
-- **Universal**: Works everywhere
-- **Transferable Skills**: Concepts apply to any framework
+- ✅ **Demonstrates Core Skills**: Shows understanding of fundamentals
+- ✅ **No Build Tools**: Simple deployment, no webpack/babel needed
+- ✅ **Transferable Knowledge**: Concepts apply to React, Vue, Angular
+- ✅ **Performance**: Fast load times, minimal overhead
 
-### Why LocalStorage?
-- **Persistent Cart**: Survives page refreshes
-- **No Backend Required**: Reduces server load
-- **Instant Access**: No network latency
-- **Simple API**: Easy to implement
-- **Good UX**: Cart doesn't disappear
+### Why LocalStorage for Cart?
+- ✅ **Persistence**: Cart survives page refreshes
+- ✅ **User Experience**: No lost selections
+- ✅ **Reduced Server Load**: No backend storage needed
+- ✅ **Simple Implementation**: Browser API, works everywhere
 
-### Hardcoded Products (No Database)
-- **Challenge Requirement**: Specified in instructions
-- **Faster Development**: No DB setup needed
-- **Sufficient for Demo**: Shows API design skills
-- **Easy to Test**: Predictable data
-- **Future-Ready**: Easy to swap with real DB later
-
-### Responsive Design Approach
-- **Mobile-First**: Designed for small screens first
-- **Flexbox & Grid**: Modern CSS layout
-- **Media Queries**: Breakpoints at 768px, 1024px
-- **Touch-Friendly**: Large buttons, easy navigation
-- **Performance**: Optimized images, lazy loading
+</details>
 
 ---
 
 ## 🧪 Testing
 
-### Running Backend Tests
+### Running Tests
 
 ```bash
-# Navigate to backend directory
+# Navigate to backend
 cd backend
 
 # Run all tests
 pytest
 
-# Run with coverage
+# Run with coverage report
 pytest --cov=. --cov-report=html
-
-# Run specific test file
-pytest tests/test_main.py
 
 # Run with verbose output
 pytest -v
+
+# Run specific test file
+pytest tests/test_main.py
 ```
 
-### Test Coverage
+### 📊 Test Coverage
 
-Current test coverage: **90%+**
+<div align="center">
 
-**Covered Areas**:
+![Coverage](https://img.shields.io/badge/coverage-90%25+-brightgreen?style=for-the-badge)
+
+</div>
+
+**Covered Areas:**
 - ✅ GET /api/products endpoint
 - ✅ POST /api/checkout endpoint
-- ✅ Request validation
-- ✅ Error handling
-- ✅ Response formats
+- ✅ Request validation (Pydantic)
+- ✅ Error handling & responses
+- ✅ CORS headers
+- ✅ Edge cases (empty cart, invalid data)
 
-**Test Cases**:
-1. Successfully fetch products
-2. Products have required fields
-3. Checkout with valid cart
-4. Checkout with empty cart
-5. Checkout with invalid data
-6. CORS headers present
-7. Error response format
+### Test Cases
 
-### Manual Testing Checklist
-
-#### Frontend Testing
-- [ ] Products load correctly
-- [ ] Add to cart works
-- [ ] Cart count updates
-- [ ] Cart modal opens/closes
-- [ ] Quantity increase/decrease
-- [ ] Remove item works
-- [ ] Total price calculates correctly
-- [ ] Checkout succeeds
-- [ ] Cart persists after refresh
-- [ ] Responsive on mobile
-- [ ] All images load
-- [ ] Error messages display
-
-#### Backend Testing
-- [ ] API docs accessible
-- [ ] Products endpoint returns data
-- [ ] Checkout logs to console
-- [ ] CORS headers present
-- [ ] Static files served
-- [ ] Error responses formatted correctly
+| Test | Description | Status |
+|------|-------------|--------|
+| `test_get_products` | Verify products endpoint returns data | ✅ Pass |
+| `test_products_structure` | Validate product schema | ✅ Pass |
+| `test_checkout_success` | Valid checkout flow | ✅ Pass |
+| `test_checkout_empty_cart` | Handle empty cart | ✅ Pass |
+| `test_checkout_invalid_data` | Validation errors | ✅ Pass |
+| `test_cors_headers` | CORS configuration | ✅ Pass |
 
 ---
 
-## 🚀 Deployment
+## 🌐 Deployment
 
-### Deployed on Replit
+<div align="center">
 
-**Live URL**: [https://8796583d-e9fa-4a81-974b-9527b9c02eab-00-3fk8lwrutjsmf.riker.repl.co/](https://8796583d-e9fa-4a81-974b-9527b9c02eab-00-3fk8lwrutjsmf.riker.repl.co/)
+### 🚀 Live on Render
 
-### Deployment Steps
+[![Live Demo](https://img.shields.io/badge/🌐_LIVE_DEMO-cartcraft--3.onrender.com-success?style=for-the-badge)](https://cartcraft-3.onrender.com/)
 
-1. **Create Replit Account**: Sign up at replit.com
-2. **Import Repository**: Connect GitHub repo
-3. **Configure Run Command**: 
-   ```bash
-   uvicorn backend.main:app --host 0.0.0.0 --port 8000
-   ```
-4. **Set Environment Variables**: (if any)
-5. **Deploy**: Click "Run"
+**Deployment Platform**: Render (Free Tier)  
+**Region**: Oregon, US West  
+**SSL**: ✅ Automatically provisioned  
+**Auto-Deploy**: ✅ Connected to GitHub
+
+</div>
+
+### Deployment Configuration
+
+```yaml
+# render.yaml
+services:
+  - type: web
+    name: cartcraft
+    env: python
+    buildCommand: pip install -r requirements.txt
+    startCommand: uvicorn main:app --host 0.0.0.0 --port $PORT
+```
 
 ### Alternative Deployment Options
 
+<details>
+<summary><b>🔧 Other Platforms</b></summary>
+
 #### Heroku
 ```bash
-# Create Procfile
+# Procfile
 web: uvicorn backend.main:app --host 0.0.0.0 --port $PORT
 
 # Deploy
-heroku create shopease-app
+heroku create cartcraft-app
 git push heroku main
 ```
 
-#### Vercel (with serverless)
+#### Vercel
 ```bash
 vercel --prod
 ```
@@ -624,122 +802,267 @@ railway init
 railway up
 ```
 
----
-
-## 🔮 Future Enhancements
-
-### Phase 1 (Next Sprint)
-- [ ] User authentication (login/signup)
-- [ ] Real database integration (PostgreSQL)
-- [ ] Product categories and filtering
-- [ ] Search functionality
-- [ ] Product reviews and ratings
-
-### Phase 2 (Advanced Features)
-- [ ] Payment gateway integration (Razorpay/Stripe)
-- [ ] Order history and tracking
-- [ ] Wishlist functionality
-- [ ] Product recommendations
-- [ ] Admin dashboard
-
-### Phase 3 (Scalability)
-- [ ] Redis caching
-- [ ] CDN for images
-- [ ] Load balancing
-- [ ] Microservices architecture
-- [ ] Real-time inventory updates
-
-### UI/UX Improvements
-- [ ] Dark mode toggle
-- [ ] Animations and transitions
-- [ ] Product quick view
-- [ ] Image zoom on hover
-- [ ] Skeleton loading screens
-- [ ] Toast notifications
-- [ ] Confetti on successful checkout
+</details>
 
 ---
 
-## 🤝 Contributing
+## 🔮 Future Roadmap
 
-Contributions are welcome! Please follow these steps:
+<div align="center">
 
-1. Fork the repository
-2. Create a feature branch (`git checkout -b feature/AmazingFeature`)
-3. Commit changes (`git commit -m 'Add AmazingFeature'`)
-4. Push to branch (`git push origin feature/AmazingFeature`)
-5. Open a Pull Request
+### 🎯 Planned Enhancements
 
-### Code Style Guidelines
-- Python: Follow PEP 8
-- JavaScript: Use ES6+ syntax
-- Comments: Write clear, concise comments
-- Testing: Add tests for new features
+</div>
 
----
+### Phase 1: Core Improvements 🚀
+- [ ] 🔐 User authentication (JWT)
+- [ ] 🗄️ PostgreSQL database integration
+- [ ] 🔍 Advanced search & filters
+- [ ] ⭐ Product ratings & reviews
+- [ ] 📊 Admin dashboard
 
-## 📝 License
+### Phase 2: Advanced Features 💎
+- [ ] 💳 Payment gateway (Razorpay/Stripe)
+- [ ] 📦 Order tracking & history
+- [ ] ❤️ Wishlist functionality
+- [ ] 🤖 AI-powered recommendations
+- [ ] 📧 Email notifications
 
-Distributed under the MIT License. See `LICENSE` file for more information.
+### Phase 3: Scalability 🌟
+- [ ] 🚀 Redis caching
+- [ ] 📸 CDN for images
+- [ ] ⚖️ Load balancing
+- [ ] 🔄 Microservices architecture
+- [ ] 📊 Analytics dashboard
+
+### UI/UX Enhancements 🎨
+- [ ] 🌙 Dark mode toggle
+- [ ] ✨ Smooth animations
+- [ ] 🔍 Product quick view
+- [ ] 🎉 Celebration animations
+- [ ] 🎨 Theme customization
 
 ---
 
 ## 👤 Contact
 
-**Your Name**
-- LinkedIn: [Your LinkedIn Profile](https://www.linkedin.com/in/j-madhan-6b90a32b1)
-- Email: jmadhanplacement@gmail.com
-- GitHub: [@yourusername](https://github.com/JMadhan1)
+<div align="center">
 
-**Project Link**: 
+### 📬 Get in Touch
+
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-J_Madhan-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/j-madhan-6b90a32b1)
+[![Email](https://img.shields.io/badge/Email-jmadhanplacement@gmail.com-D14836?style=for-the-badge&logo=gmail&logoColor=white)](mailto:jmadhanplacement@gmail.com)
+[![GitHub](https://img.shields.io/badge/GitHub-JMadhan1-181717?style=for-the-badge&logo=github&logoColor=white)](https://github.com/JMadhan1)
+
+---
+
+### 🔗 Project Links
+
+<table>
+<tr>
+<td align="center" width="33%">
+<a href="https://cartcraft-3.onrender.com/" target="_blank">
+<img src="https://img.icons8.com/fluency/96/000000/domain.png" width="60"/>
+<br />
+<b>🌐 Live Application</b>
+<br />
+<sub>cartcraft-3.onrender.com</sub>
+</a>
+</td>
+<td align="center" width="33%">
+<a href="https://drive.google.com/file/d/15KO2hlPmsXrTp2jSQ8rDBTbe_kse7FNQ/view?usp=sharing" target="_blank">
+<img src="https://img.icons8.com/fluency/96/000000/video.png" width="60"/>
+<br />
+<b>🎥 Video Demo</b>
+<br />
+<sub>5-min walkthrough</sub>
+</a>
+</td>
+<td align="center" width="33%">
+<a href="https://github.com/JMadhan1/cartcraft" target="_blank">
+<img src="https://img.icons8.com/fluency/96/000000/github.png" width="60"/>
+<br />
+<b>💻 Source Code</b>
+<br />
+<sub>GitHub Repository</sub>
+</a>
+</td>
+</tr>
+</table>
+
+</div>
+
 ---
 
 ## 🙏 Acknowledgments
 
-- **Verto**: For the ASE Challenge opportunity
-- **FastAPI Documentation**: Excellent learning resource
-- **Unsplash**: Free high-quality product images
-- **Community**: Stack Overflow, GitHub discussions
+<div align="center">
+
+Special thanks to:
+
+🏢 **[Verto](https://www.verto.in/)** - For the ASE Challenge opportunity  
+📚 **[FastAPI](https://fastapi.tiangolo.com/)** - Excellent documentation & framework  
+🖼️ **[Unsplash](https://unsplash.com/)** - Beautiful free product images  
+☁️ **[Render](https://render.com/)** - Reliable free hosting  
+👥 **Open Source Community** - Stack Overflow, GitHub, Reddit
+
+</div>
 
 ---
 
 ## 📊 Project Statistics
 
-- **Lines of Code**: ~800
-- **Development Time**: 6 hours
-- **Test Coverage**: 90%+
-- **Performance Score**: 95/100 (Lighthouse)
-- **Accessibility Score**: 100/100
-- **Best Practices**: 100/100
+<div align="center">
+
+| Metric | Value |
+|--------|-------|
+| 📝 Lines of Code | ~800 |
+| ⏱️ Development Time | 6 hours |
+| 🧪 Test Coverage | 90%+ |
+| ⚡ Lighthouse Score | 95/100 |
+| ♿ Accessibility | 100/100 |
+| 🎯 Best Practices | 100/100 |
+
+</div>
 
 ---
 
 ## 🎯 ASE Challenge Completion
 
-### Core Features: ✅ COMPLETED
-- [x] GET /api/products endpoint
-- [x] POST /api/checkout endpoint  
-- [x] Product grid display
-- [x] Add to cart functionality
-- [x] Cart state management
-- [x] Cart modal/view
-- [x] Checkout integration
+<div align="center">
 
-### Bonus Features: ✅ COMPLETED
-- [x] Quantity controls in cart
-- [x] LocalStorage persistence
-- [x] Backend tests
+### ✅ All Requirements Met
 
-### Extra Mile: ✅ COMPLETED
-- [x] Responsive design
-- [x] Error handling
-- [x] Loading states
-- [x] Professional documentation
-- [x] Clean code architecture
-- [x] Live deployment
+</div>
+
+<table>
+<tr>
+<th width="50%">Core Features</th>
+<th width="50%">Bonus Features</th>
+</tr>
+<tr>
+<td>
+
+✅ GET /api/products endpoint  
+✅ POST /api/checkout endpoint  
+✅ Product grid display  
+✅ Add to cart functionality  
+✅ Cart state management  
+✅ Cart modal/view  
+✅ Checkout integration
+
+</td>
+<td>
+
+✅ Quantity controls in cart  
+✅ LocalStorage persistence  
+✅ Backend tests (pytest)  
+✅ Responsive design  
+✅ Error handling  
+✅ Loading states  
+✅ Professional documentation
+
+</td>
+</tr>
+</table>
+
+### 🏆 Extra Mile Achievements
 
 <div align="center">
-Built with ❤️ for the Verto ASE Challenge 2025
-🎥 Watch Demo | 🚀 Live Site | 📧 Contact Me
-⬆ Back to Top
+
+```
+✨ Live Deployment on Render
+✨ Video Walkthrough (5 minutes)
+✨ Comprehensive README with visuals
+✨ Clean Code Architecture
+✨ Interactive API Documentation
+✨ 90%+ Test Coverage
+✨ Mobile-First Responsive Design
+```
+
+</div>
+
+---
+
+<div align="center">
+
+## 💪 Built with Passion for Verto ASE Challenge 2025
+
+---
+
+### 🎬 Experience CartCraft Now!
+
+[![Watch Demo](https://img.shields.io/badge/🎥_Watch_Video_Demo-red?style=for-the-badge&logo=youtube&logoColor=white)](https://drive.google.com/file/d/15KO2hlPmsXrTp2jSQ8rDBTbe_kse7FNQ/view?usp=sharing)
+[![Try Live](https://img.shields.io/badge/🚀_Try_Live_Demo-success?style=for-the-badge&logo=vercel&logoColor=white)](https://cartcraft-3.onrender.com/)
+[![View Code](https://img.shields.io/badge/💻_View_Source-black?style=for-the-badge&logo=github&logoColor=white)](https://github.com/JMadhan1/cartcraft)
+
+---
+
+### 📧 Let's Connect!
+
+**J Madhan**
+
+[![LinkedIn](https://img.shields.io/badge/-Connect_on_LinkedIn-0077B5?style=flat&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/j-madhan-6b90a32b1)
+[![Email](https://img.shields.io/badge/-Send_Email-D14836?style=flat&logo=gmail&logoColor=white)](mailto:jmadhanplacement@gmail.com)
+[![GitHub](https://img.shields.io/badge/-Follow_on_GitHub-181717?style=flat&logo=github&logoColor=white)](https://github.com/JMadhan1)
+
+---
+
+### ⭐ If you like this project, please give it a star!
+
+[![Star on GitHub](https://img.shields.io/github/stars/JMadhan1/cartcraft?style=social)](https://github.com/JMadhan1/cartcraft)
+
+---
+
+<sub>Made with ❤️ by J Madhan | October 2025</sub>
+
+[⬆ Back to Top](#-cartcraft---shopping-cart-application)
+
+</div>
+
+---
+
+## 📄 License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
+---
+
+<div align="center">
+
+### 🎉 Thank you for checking out CartCraft!
+
+**Ready to explore the future of shopping cart applications?**
+
+<table>
+<tr>
+<td align="center">
+<a href="https://cartcraft-3.onrender.com/">
+<img src="https://img.shields.io/badge/🌐_Visit-Live_Site-success?style=for-the-badge"/>
+</a>
+</td>
+<td align="center">
+<a href="https://drive.google.com/file/d/15KO2hlPmsXrTp2jSQ8rDBTbe_kse7FNQ/view?usp=sharing">
+<img src="https://img.shields.io/badge/🎥_Watch-Video_Demo-red?style=for-the-badge"/>
+</a>
+</td>
+<td align="center">
+<a href="https://cartcraft-3.onrender.com/docs">
+<img src="https://img.shields.io/badge/📚_Explore-API_Docs-blue?style=for-the-badge"/>
+</a>
+</td>
+</tr>
+</table>
+
+**Looking forward to the hackathon on October 13th, 2025! 🚀**
+
+---
+
+<sub>
+💡 Built for Verto ASE Challenge | 
+🎯 Full-Stack Development | 
+⚡ FastAPI + Vanilla JS | 
+🌟 Production-Ready
+</sub>
+
 </div>
