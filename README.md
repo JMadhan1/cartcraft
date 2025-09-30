@@ -192,8 +192,8 @@ cartcraft/
 #### 1. Clone the Repository
 
 ```bash
-git clone https://github.com/yourusername/shopease.git
-cd shopease
+git clone https://github.com/JMadhan1/cartcraft.git
+cd cartcraft
 ```
 
 #### 2. Set Up Backend
@@ -685,7 +685,7 @@ Distributed under the MIT License. See `LICENSE` file for more information.
 
 **Your Name**
 - LinkedIn: [Your LinkedIn Profile](https://www.linkedin.com/in/j-madhan-6b90a32b1)
-- Email: your.email@example.com
+- Email: jmadhanplacement@gmail.com
 - GitHub: [@yourusername](https://github.com/JMadhan1)
 
 **Project Link**: 
