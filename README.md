@@ -7,9 +7,7 @@
 
 > A minimal yet feature-rich e-commerce shopping cart application built for the Verto ASE Challenge 2025
 
-**Live Demo:** [https://8796583d-e9fa-4a81-974b-9527b9c02eab-00-3fk8lwrutjsmf.riker.repl.co/](https://8796583d-e9fa-4a81-974b-9527b9c02eab-00-3fk8lwrutjsmf.riker.repl.co/)
-
----
+*
 
 ## 📋 Table of Contents
 
@@ -29,6 +27,11 @@
 - [Contact](#contact)
 
 ---
+A minimal yet feature-rich e-commerce shopping cart application built for the Verto ASE Challenge 2025
+
+🎥 Video Demonstration: Watch on Google Drive
+🚀 Live Demo: https://cartcraft-3.onrender.com/
+
 
 ## 🎯 About The Project
 
@@ -735,12 +738,8 @@ Distributed under the MIT License. See `LICENSE` file for more information.
 - [x] Clean code architecture
 - [x] Live deployment
 
----
-
 <div align="center">
-
-**Built with ❤️ for the Verto ASE Challenge 2025**
-
-[⬆ Back to Top](#-shopease---simple-shopping-cart-application)
-
+Built with ❤️ for the Verto ASE Challenge 2025
+🎥 Watch Demo | 🚀 Live Site | 📧 Contact Me
+⬆ Back to Top
 </div>
